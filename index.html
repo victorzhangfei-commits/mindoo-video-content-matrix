@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mindoo 半年期视频内容创作矩阵</title>
+  <style>
+    :root {
+      --paper: #f7f4ed;
+      --white: #fffdfa;
+      --ink: #1e2322;
+      --body: #3f4744;
+      --muted: #767d78;
+      --line: #d8d0c3;
+      --green: #435f52;
+      --brown: #80624a;
+      --red: #ad483f;
+      --blue: #38657a;
+      --yellow: #bb9437;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 34px 28px 72px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .logo {
+      height: 30px;
+      width: auto;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .hero {
+      padding: 70px 0 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0 0 26px;
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: clamp(42px, 6vw, 78px);
+      font-weight: 500;
+      line-height: .98;
+      color: var(--green);
+    }
+
+    .lead {
+      max-width: 880px;
+      margin: 0;
+      color: var(--body);
+      font-size: 18px;
+      line-height: 1.95;
+    }
+
+    .statement {
+      margin-top: 32px;
+      padding: 24px 28px;
+      border-left: 5px solid var(--green);
+      background: var(--white);
+      color: var(--body);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .prepared-meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 22px;
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,253,250,.74);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .prepared-meta strong {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .toc a {
+      display: block;
+      min-height: 74px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,253,250,.7);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 54px 0 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 38px;
+      line-height: 1.15;
+      font-weight: 500;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.95;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    h4 {
+      margin: 22px 0 8px;
+      color: var(--green);
+      font-size: 15px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--body);
+      line-height: 1.85;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--body);
+      line-height: 1.8;
+    }
+
+    li + li { margin-top: 4px; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .card.emphasis { border-left: 5px solid var(--green); }
+    .card.warning { border-left: 5px solid var(--brown); }
+
+    .label {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 5px 9px;
+      border: 1px solid rgba(67,95,82,.26);
+      border-radius: 99px;
+      color: var(--green);
+      background: rgba(67,95,82,.06);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    th {
+      color: var(--green);
+      background: #e9e1d4;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    th:last-child, td:last-child { border-right: 0; }
+
+    .idea {
+      margin-bottom: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .idea-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .idea-title span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .subgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .note {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,253,250,.7);
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .month {
+      padding: 18px;
+      min-height: 330px;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--green);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .month-num {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .quote {
+      margin-top: 24px;
+      padding: 28px;
+      border-radius: var(--radius);
+      color: #fff;
+      background: var(--green);
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 28px;
+      line-height: 1.45;
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .usage-note {
+      margin-top: 10px;
+      color: var(--body);
+    }
+
+    .watermark {
+      position: fixed;
+      right: 22px;
+      bottom: 18px;
+      z-index: 20;
+      pointer-events: none;
+      color: rgba(67, 95, 82, .18);
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: clamp(18px, 2vw, 28px);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-align: right;
+      transform: rotate(-4deg);
+    }
+
+    @media (max-width: 980px) {
+      .section-head,
+      .grid-2,
+      .grid-3,
+      .subgrid {
+        grid-template-columns: 1fr;
+      }
+
+      .toc,
+      .roadmap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page { padding: 22px 16px 48px; }
+      .top { align-items: flex-start; flex-direction: column; }
+      .toc,
+      .roadmap { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; }
+      .idea-title { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; padding: 16mm; }
+      .hero { page-break-after: always; }
+      section { page-break-inside: avoid; }
+      .toc { display: none; }
+      .watermark {
+        color: rgba(67, 95, 82, .16);
+        right: 12mm;
+        bottom: 10mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="watermark">Zhang Fei / 張霏</div>
+  <main class="page">
+    <header class="top">
+      <div>
+        <img class="logo" src="https://mindoo.co.jp/cdn/shop/files/logo_x30@2x.png?v=1686201160" alt="Mindoo Technology logo">
+        <div>6-Month Video Content Proposal</div>
+      </div>
+      <div>Prepared by Zhang Fei / 張霏 · Proposal Draft / 2026</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Mindoo 半年期视频内容创作矩阵</p>
+      <h1>从传达功能的视频，到建立生活习惯的影像。</h1>
+      <p class="lead">
+        本方案围绕 Mindoo 半年期视频内容制作展开，目标是让 AquaX / PureX 的功能被快速理解，同时把“清洁”转化成一种可以被观看、被模仿、被记住的生活习惯。
+      </p>
+      <div class="statement">
+        核心方向：功能要被清楚证明，生活理由要被自然看见，文化支点要让品牌被记住。内容制作将从单条视频，升级为可以持续生产、拆分和复用的影像系统。
+      </div>
+      <div class="prepared-meta">
+        <span><strong>Prepared by</strong> Zhang Fei / 張霏</span>
+        <span><strong>Purpose</strong> Mindoo Technology interview discussion</span>
+        <span><strong>Status</strong> Proposal Draft</span>
+      </div>
+      <nav class="toc">
+        <a href="#premise">1. 现状问题与制作方向</a>
+        <a href="#architecture">2. 两大内容板块</a>
+        <a href="#ideas-a">3. 功能渗透型视觉创意</a>
+        <a href="#ideas-b">4. 文化哲学 / 生活方式型视觉创意</a>
+        <a href="#platform">5. 平台内容分工</a>
+        <a href="#roadmap">6. 半年期制作路线图</a>
+        <a href="#scope">7. 制作产出与协作方式</a>
+      </nav>
+    </section>
+
+    <section id="premise">
+      <div class="section-head">
+        <h2>1. 现状问题与制作方向</h2>
+        <p class="section-copy">
+          当前的关键课题不只是提升内容发布频率，而是进一步明确平台角色、内容结构和可持续的制作机制。Mindoo 官方文案强调“重新定义清洁”“让清洁也洗净心情”“清洁可以成为更好的事情”这样的方向，下一步需要把这些品牌语言转化成具体的视频结构与视觉语言。
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card emphasis">
+          <span class="label">Current issue 01</span>
+          <h3>长视频内容可进一步结构化</h3>
+          <p>现有 5 分钟访谈已经具备基础影像质量。后续可强化叙事结构，让生活场景、人物观点与产品使用形成更清晰的递进关系，减少单纯访谈带来的观看疲劳。</p>
+        </article>
+        <article class="card emphasis">
+          <span class="label">Current issue 02</span>
+          <h3>Instagram 与 KOC 内容需要分工</h3>
+          <p>KOC 视频适合承担真实使用和即时反馈，而 Instagram 更适合建立品牌视觉记忆、生活美学和系列化表达。将两类内容分工处理，可以提升各平台的内容效率。</p>
+        </article>
+        <article class="card emphasis">
+          <span class="label">Current issue 03</span>
+          <h3>拖扫一体需要习惯教育</h3>
+          <p>日本用户对“吸尘 + 湿拖一次完成”的日常习惯仍有教育空间。视频内容需要同时回答三个问题：什么时候使用、为什么可以每天使用、如何自然融入家庭和个人生活节奏。</p>
+        </article>
+      </div>
+
+      <div class="quote">
+        内容的价值在于建立使用习惯，并让用户记住一种更轻、更整洁的生活状态。
+      </div>
+    </section>
+
+    <section id="architecture">
+      <div class="section-head">
+        <h2>2. 两大内容板块</h2>
+        <p class="section-copy">
+          不把 Cleaning Proof、Product Experience、Problem-Solution 这些标签平铺为一级分类，因为它们经常互相重叠。更合理的方式是把内容分成两大板块：一个负责功能进入生活，一个负责品牌文化记忆。
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <span class="label">Pillar A</span>
+          <h3>功能渗透型视觉创意</h3>
+          <p>功能仍然是底层驱动力，但不做硬广告。通过生活问题、日常习惯、实验视觉、法人场景，让用户自然理解产品价值。</p>
+          <ul>
+            <li>Family Daily Reset：三口之家的一天与地板污渍</li>
+            <li>Daily Routine Ritual：都市独居白领的每日清洁仪式</li>
+            <li>White Box Proof：白色实验室 / 舞台式功能证明</li>
+            <li>Professional Use Scene：养老院、医院、幼儿园等法人场景</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="label">Pillar B</span>
+          <h3>文化哲学 / 生活方式型视觉创意</h3>
+          <p>功能作为默认成立的前提，重点放在家务、时间、女性劳动、地板、季节、传统空间等文化支点上，让 Mindoo 不只是被理解，而是被记住。</p>
+          <ul>
+            <li>Housework Memory：家务、时间与女性劳动</li>
+            <li>Time Travel Comedy：大正、战国、神魔、二次元世界的穿越反差</li>
+            <li>Quiet Traditional Spaces：神社、寺院、日式大宅、古民居</li>
+            <li>Seasonal Domestic Ritual：四季、节日与清洁习惯</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="ideas-a">
+      <div class="section-head">
+        <h2>3. 功能渗透型视觉创意</h2>
+        <p class="section-copy">
+          功能渗透型内容的重点，是让产品价值在生活问题中自然出现。每个创意可以同时承担功能证明、习惯养成、使用阻力消除和购买不安解除，但需要有一个明确主轴。
+        </p>
+      </div>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>A1. Family Daily Reset / 三口之家一日清洁剧</h3>
+          <span>主轴：具体生活问题型</span>
+        </div>
+        <p>
+          以日本普通三口之家为例，呈现一天中不断出现的地板清洁问题，并通过 Mindoo 多次解决生活里的小麻烦。创意重点是：一个家庭的一天里，地板不断被生活弄脏，也不断被轻松重置。
+        </p>
+        <div class="subgrid">
+          <div>
+            <h4>故事结构</h4>
+            <ul>
+              <li>早上：孩子早餐后，面包屑、饮料痕迹落在地板上。</li>
+              <li>白天：遛狗回来，狗直接冲进家里，把玄关和走廊弄脏。</li>
+              <li>下午：孩子社团活动结束回家，发现自己把地板踩脏，引出家庭成员之间的自然互动。</li>
+              <li>晚上：今天约好妻子不做饭，丈夫回家做天妇罗。</li>
+              <li>天妇罗油溅到厨房地板，最后由丈夫用 Mindoo 清洁厨房和餐厅地板。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>制作设计</h4>
+            <ul>
+              <li>主视频可以做成 3-5 分钟轻剧情。</li>
+              <li>每个清洁问题都可以同步拍摄为 15 秒短视频。</li>
+              <li>同一组人物、同一家庭场景、不同时间点、不同污渍，形成系列。</li>
+              <li>丈夫最后清洁地板的设计，可以自然表达家庭成员共同参与家务，弱化“清洁责任由单一角色承担”的旧有印象。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">生活问题</span>
+          <span class="tag">家庭场景</span>
+          <span class="tag">家务分担</span>
+          <span class="tag">15秒切片</span>
+        </div>
+      </article>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>A2. Daily Routine Ritual / 都市白领的每日清洁固定仪式</h3>
+          <span>主轴：日常习惯养成型</span>
+        </div>
+        <p>
+          独居都市白领每天饭后用 Mindoo 清洁地板，把“清洁”这个动作提升为每天结束时的个人仪式。创意重点从“地板有多脏”转向“清一下地板，生活状态就被整理好了”。
+        </p>
+        <div class="subgrid">
+          <div>
+            <h4>视觉设定</h4>
+            <ul>
+              <li>每天不同衣服、不同音乐、同一台 Mindoo。</li>
+              <li>使用特殊低角度仰拍，主要展示主角穿搭、脚步、地板反光和 Mindoo 的移动轨迹。</li>
+              <li>清洁动作每次重复，但服装、音乐、光线和房间状态变化。</li>
+              <li>扫地不再是麻烦，而是一种饭后或归家后的情绪整理。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>系列机制</h4>
+            <ul>
+              <li>每条视频结尾加入固定但可变化的产品露出动画。</li>
+              <li>用节奏、重复、精致画面，让用户记住“清洁固定仪式”这个形式。</li>
+              <li>强调地板反射、服装颜色、清洁后房间安静下来的感觉。</li>
+              <li>不用大量讲功能，但自然会带出产品体验和使用习惯。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">都市生活</span>
+          <span class="tag">每日仪式</span>
+          <span class="tag">低角度</span>
+          <span class="tag">音乐节奏</span>
+        </div>
+      </article>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>A3. White Box Proof / 白色实验室系列</h3>
+          <span>主轴：功能证明型</span>
+        </div>
+        <p>
+          许多家电品牌都会使用“科学实验室”的视觉，但 Mindoo 可以把它改造成更有记忆点的“极简实验室 + 舞台布景 + 广告摄影”。场景只有纯白空间、Mindoo 产品、一个衣着鲜艳的人，以及地面上排列整齐、视觉刺眼的各种脏污。
+        </p>
+        <div class="subgrid">
+          <div>
+            <h4>视觉规则</h4>
+            <ul>
+              <li>场景是纯白盒子空间，尽量去掉真实生活背景。</li>
+              <li>人物穿红、蓝、黄等高饱和色块服装。</li>
+              <li>地面排列咖啡、酱油、油、泥、毛发、碎屑等污渍。</li>
+              <li>白色空间与刺眼脏污形成强烈反差，三秒内抓住观众注意力。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>视频形式</h4>
+            <ul>
+              <li>One Pass Challenge：一次通过可以清掉多少。</li>
+              <li>Stain Line：一排不同污渍，从左到右连续清洁。</li>
+              <li>No Cut Proof：尽量减少剪辑，让功能效果更可信。</li>
+              <li>Sound of Clean：只保留吸引声、水声、脚步声，强化真实感。</li>
+              <li>这类素材也可以直接转用到 EC、店头循环视频和展示会。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">白盒子</span>
+          <span class="tag">强对比</span>
+          <span class="tag">无剪辑证明</span>
+          <span class="tag">功能冲击</span>
+        </div>
+      </article>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>A4. Professional Use Scene / 法人和设施场景</h3>
+          <span>主轴：使用场景拓展</span>
+        </div>
+        <p>
+          养老院、医院、幼儿园、美容院、民宿、办公室等场所每天都需要大量地板清洁。该方向与家庭场景内容不同，更偏向 B2B / 法人场景拓展，也可作为销售资料和展示会素材。
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>场景</th>
+              <th>清洁痛点</th>
+              <th>视觉重点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>养老院 / 护理设施</td>
+              <td>食物掉落、轮椅痕迹、卫生管理、工作人员负担</td>
+              <td>安静、轻量、快速 重置、使用者安心感</td>
+            </tr>
+            <tr>
+              <td>医院 / 诊所</td>
+              <td>候诊室、走廊、诊疗室的日常清洁</td>
+              <td>清洁感、信赖感、营业中低干扰</td>
+            </tr>
+            <tr>
+              <td>幼儿园 / 托育机构</td>
+              <td>孩子吃饭、泥脚、玩具区频繁小污渍</td>
+              <td>频繁清洁、安心、安全、快速处理</td>
+            </tr>
+            <tr>
+              <td>美容院 / 宠物店 / 民宿</td>
+              <td>头发、水滴、毛发、脚印、退房后清洁</td>
+              <td>营业效率、清洁完成感、短时间作业</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section id="ideas-b">
+      <div class="section-head">
+        <h2>4. 文化哲学 / 生活方式型视觉创意</h2>
+        <p class="section-copy">
+          文化哲学 / 生活方式型内容不以功能说明为中心，而是把 Mindoo 放进家务、时间、家庭分工、地板、季节、传统空间等文化语境里。功能退到背景，成为世界观成立的前提。
+        </p>
+      </div>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>B1. Housework Memory / 家务与时间</h3>
+          <span>主轴：家务、时间、家庭分工</span>
+        </div>
+        <p>
+          家务不只是一种生活哲学，也涉及时间分配、家庭内分工和生活质量。该方向可以面向家庭主妇观众，同时以更现代的方式呈现家务责任的分担。
+        </p>
+        <div class="subgrid">
+          <div>
+            <h4>核心概念</h4>
+            <ul>
+              <li>把被重复家务占据的时间，重新还给生活本身。</li>
+              <li>Mindoo 的角色是让重复劳动更轻、更容易被家庭成员共同承担。</li>
+              <li>温情表达可作为情绪入口，同时保持家庭分工表达的现代性。</li>
+              <li>在家务议题的表达中，重点放在劳动减轻、时间释放和共同参与，弱化传统家庭分工的固定印象。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>视觉表达</h4>
+            <ul>
+              <li>“如果那个时代能用上 Mindoo？”作为核心问题。</li>
+              <li>大正时代女性跪地擦木地板，桶、水、布、膝盖、手、障子光。</li>
+              <li>表达方式偏安静克制，重点是想象：如果清洁能轻一点，她的时间会不会不一样。</li>
+              <li>Mindoo 作为象征出现，代表时间被轻轻松开的瞬间。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note">
+          <strong>表达原则</strong>
+          表达重点应放在“家务可以被共同承担”“重复劳动可以被工具减轻”“清洁是为了更好地生活，而非制造完美家庭标准”。
+        </div>
+      </article>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>B2. Time Travel Comedy / 家务穿越喜剧</h3>
+          <span>主轴：反差喜剧与病毒传播</span>
+        </div>
+        <p>
+          把 Housework Memory 的家务主题转成短视频方向的反差喜剧。Mindoo 穿越到大正时代、战国时代、神魔世界、二次元世界，让观众在脑洞里看到：无论哪个时代，家务都麻烦。
+        </p>
+        <div class="subgrid">
+          <div>
+            <h4>世界设定</h4>
+            <ul>
+              <li>大正时代：女佣、家庭内劳动与现代拖扫一体机突然相遇。</li>
+              <li>战国时代：大战之后，满是泥脚印的城内走廊要怎么清理。</li>
+              <li>神魔世界：魔物掉毛、魔力污渍、异世界地板清洁。</li>
+              <li>二次元世界：从三次元拿插排进来给 Mindoo 供电。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>脑洞细节</h4>
+            <ul>
+              <li>战国时代 Mindoo 到底怎么发电。</li>
+              <li>水车发电、人力发电都不对。</li>
+              <li>最后由阴阳师做法召唤雷电，让 Mindoo 动起来。</li>
+              <li>神魔世界当然靠魔力驱动；二次元世界最强的是从三次元拿来的插排。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">大正时代</span>
+          <span class="tag">战国时代</span>
+          <span class="tag">神魔世界</span>
+          <span class="tag">二次元</span>
+          <span class="tag">发电脑洞</span>
+        </div>
+      </article>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>B3. Quiet Traditional Spaces / 静默传统空间</h3>
+          <span>主轴：场所、静物、编辑感</span>
+        </div>
+        <p>
+          神社、寺院、日式大宅、古民居等有木质地板、需要被日常整理的空间，可以成为 Mindoo 的文化场景。这里不一定要出现人使用产品，而是让 Mindoo 静静存在于空间里，形成“此时无声胜有声”的植入。
+        </p>
+        <div class="subgrid">
+          <div>
+            <h4>视觉语法</h4>
+            <ul>
+              <li>木地板、障子、缘侧、庭院、走廊、晨光、雨后的湿度。</li>
+              <li>Mindoo 放在画面边缘，不强行成为主角。</li>
+              <li>不拍使用过程，只留下清洁后的静谧和秩序。</li>
+              <li>更接近 Casa BRUTUS 式的空间和器物叙事。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>文化注意点</h4>
+            <ul>
+              <li>神社和寺院属于敏感文化空间，商业感太强会有违和。</li>
+              <li>实际拍摄可以先从古民居、旅馆、茶室、日式大宅开始。</li>
+              <li>画面重心放在“场所被整理后的状态”。</li>
+              <li>Mindoo 是现代生活中“整理场所”的安静工具。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="idea">
+        <div class="idea-title">
+          <h3>B4. Seasonal Domestic Ritual / 四季与清洁仪式</h3>
+          <span>主轴：四季、节日、习惯</span>
+        </div>
+        <p>
+          把 Mindoo 放入一年四季和节日传统中，让清洁成为“迎接季节的准备”。这条线可以长期做，也最适合 Instagram 的视觉调性建设。
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>季节</th>
+              <th>生活场景</th>
+              <th>视觉元素</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>春</td>
+              <td>花粉、窗边、新生活、薄光</td>
+              <td>淡色、植物、纸、地板上的细小灰尘</td>
+            </tr>
+            <tr>
+              <td>梅雨</td>
+              <td>雨天玄关、伞、湿脚印、水痕</td>
+              <td>暗绿、木地板、水声、湿度、雨后空气</td>
+            </tr>
+            <tr>
+              <td>夏</td>
+              <td>赤脚、冷茶、风扇、黏腻地板</td>
+              <td>强光、地板反射、脚步、清爽感</td>
+            </tr>
+            <tr>
+              <td>秋 / 冬</td>
+              <td>落叶、古民居、年末大扫除、家族时间</td>
+              <td>暖色、影子、夜灯、静物、清洁后的安静</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section id="platform">
+      <div class="section-head">
+        <h2>5. 平台内容分工</h2>
+        <p class="section-copy">
+          同一个创意在不同平台上的剪法应有所区分。平台不仅是发布渠道，也对应不同的观看状态和内容期待。通过平台分工，可以减少“一条视频到处搬运”的低效使用。
+        </p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>平台</th>
+            <th>主要作用</th>
+            <th>适合内容</th>
+            <th>编辑方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>YouTube Long</td>
+            <td>品牌理解、文化叙事、人物与生活文脉</td>
+            <td>Family Daily Reset、Housework Memory、Quiet Traditional Spaces</td>
+            <td>3-5 分钟。用场景、问题、转折、使用后状态构成故事，不做松散访谈。</td>
+          </tr>
+          <tr>
+            <td>YouTube Shorts</td>
+            <td>功能理解、搜索入口、短说明</td>
+            <td>White Box Proof、家庭生活问题切片、How-to snippets</td>
+            <td>15-45 秒。一个问题一条视频，先看到污渍，再看到结果。</td>
+          </tr>
+          <tr>
+            <td>TikTok</td>
+            <td>传播、反差、KOC、真实使用</td>
+            <td>Time Travel Comedy、KOC 再编辑、家庭污渍切片</td>
+            <td>3 秒 hook。家务共鸣梗、脑洞、反转结尾。</td>
+          </tr>
+          <tr>
+            <td>Instagram Reels</td>
+            <td>品牌视觉记忆、日常习惯、生活方式调性</td>
+            <td>Daily Routine Ritual、Seasonal Domestic Ritual、Quiet Reset</td>
+            <td>音乐、光线、衣服、地板、移动轨迹。KOC 内容可单独剪成更适合 Reels 的生活方式版本。</td>
+          </tr>
+          <tr>
+            <td>Instagram Carousel</td>
+            <td>静态世界观、海报感、保存价值</td>
+            <td>Housework Memory、Seasonal Living、Traditional Spaces</td>
+            <td>短文案 + 照片 + 留白。以视觉笔记和海报感为主。</td>
+          </tr>
+          <tr>
+            <td>Website / EC</td>
+            <td>购买前不安消除、商品理解</td>
+            <td>White Box Proof、How-to、FAQ、Professional Scene</td>
+            <td>明确、可信、无多余情绪。重点是 before / after、流程、维护、适用场景。</td>
+          </tr>
+          <tr>
+            <td>店头 / 展会</td>
+            <td>无声也能理解的功能证明</td>
+            <td>White Box Proof、One Pass Challenge、Stain Line</td>
+            <td>10-15 秒循环。少字，大画面，污渍和结果需要远距离也能看懂。</td>
+          </tr>
+          <tr>
+            <td>Sales Material</td>
+            <td>法人销售、设施导入想象</td>
+            <td>Professional Use Scene</td>
+            <td>设施别 30 秒 + 综合 90 秒。强调清洁感、静音、短时间 重置、工作人员负担减轻。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="roadmap">
+      <div class="section-head">
+        <h2>6. 半年期制作路线图</h2>
+        <p class="section-copy">
+          半年计划不以复杂 KPI 为核心，而以视频制作基盘建立为核心。前半段建立功能证明和生活问题素材，后半段推进文化内容和品牌记忆。
+        </p>
+      </div>
+
+      <div class="roadmap">
+        <article class="month">
+          <span class="month-num">Month 1</span>
+          <h3>基盘设计</h3>
+          <p>整理平台角色、拍摄语调和编辑模板。</p>
+          <ul>
+            <li>现有 YouTube / Instagram / TikTok 内容梳理</li>
+            <li>White Box Proof v0 测试</li>
+            <li>长视频内容结构模板</li>
+            <li>素材管理和复用规则</li>
+          </ul>
+        </article>
+        <article class="month">
+          <span class="month-num">Month 2</span>
+          <h3>功能证明</h3>
+          <p>先做一批短视频可复用功能资产。</p>
+          <ul>
+            <li>White Box Proof 10 条</li>
+            <li>One Pass / Stain Line / No Cut</li>
+            <li>EC / 店头转用素材</li>
+          </ul>
+        </article>
+        <article class="month">
+          <span class="month-num">Month 3</span>
+          <h3>家庭场景</h3>
+          <p>拍摄 Family Daily Reset，并同步产出长短素材。</p>
+          <ul>
+            <li>三口之家一日主视频</li>
+            <li>狗、孩子、天妇罗油等 15 秒切片</li>
+            <li>家务分担表达确认</li>
+          </ul>
+        </article>
+        <article class="month">
+          <span class="month-num">Month 4</span>
+          <h3>习惯与视觉记忆</h3>
+          <p>建立 Daily Routine Ritual 和 Instagram 视觉调性。</p>
+          <ul>
+            <li>都市白领 日常系列</li>
+            <li>服装 / 音乐 / 低角度格式</li>
+            <li>固定产品露出动画</li>
+          </ul>
+        </article>
+        <article class="month">
+          <span class="month-num">Month 5</span>
+          <h3>文化与传播实验</h3>
+          <p>分开测试 Housework Memory 和 Time Travel Comedy。</p>
+          <ul>
+            <li>“如果那个时代有 Mindoo”安静短片</li>
+            <li>战国发电 / 阴阳师雷电</li>
+            <li>神魔 / 二次元世界脑洞</li>
+          </ul>
+        </article>
+        <article class="month">
+          <span class="month-num">Month 6</span>
+          <h3>整合与拓展</h3>
+          <p>向季节、传统空间和法人场景扩展，整理下一期计划。</p>
+          <ul>
+            <li>四季 / 节日系列试作</li>
+            <li>日式大宅 / 古民居静默植入</li>
+            <li>法人场景 30 秒素材</li>
+            <li>半年素材库和下一期企划</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="scope">
+      <div class="section-head">
+        <h2>7. 制作产出与协作方式</h2>
+        <p class="section-copy">
+          半年期内容计划需要建立清晰的制作产出和协作方式。视频企划、拍摄、剪辑、素材拆分与复用形成统一流程后，可以让每次拍摄服务多个平台和多个业务触点。
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card emphasis">
+          <h3>核心制作产出</h3>
+          <ul>
+            <li>视频企划的结构设计</li>
+            <li>拍摄语调、镜头方案、剪辑格式设计</li>
+            <li>长视频、短视频、静止图、EC 素材的分解方案</li>
+            <li>不同平台的视频形式适配</li>
+            <li>素材库整理和复用设计</li>
+          </ul>
+        </article>
+        <article class="card warning">
+          <h3>协作对象</h3>
+          <ul>
+            <li>品牌方向：与 Brand / Marketing 侧确认语调和视觉规范</li>
+            <li>EC 页面：提供商品页可使用的视频与动图素材</li>
+            <li>PR / 媒体：提供品牌故事、季节视觉和空间素材</li>
+            <li>法人销售：提供设施场景、功能证明和展示会循环视频</li>
+            <li>KOC / UGC：统一二次剪辑规则和平台投放格式</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="quote">
+        一次拍摄可以被设计成长视频、短视频、静止图、EC、店头、销售资料都能使用的内容资产。
+      </div>
+    </section>
+
+    <p class="footer">
+      资料来源：Mindoo 官方网站公开信息与产品命名。本方案聚焦半年期视频内容创作矩阵，重点包括内容策划、视觉创意、制作系统和素材复用。
+      <br>
+      <span class="usage-note">© 2026 Zhang Fei / 張霏. 本资料为面试讨论用途的原创提案草案，未经作者许可，请勿复制、转发或用于其他商业用途。</span>
+    </p>
+  </main>
+</body>
+</html>
