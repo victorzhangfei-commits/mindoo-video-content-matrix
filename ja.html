@@ -1,0 +1,2500 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mindoo Video Director 半年間ビジネス提案</title>
+  <style>
+    :root {
+      --bg: #f3f6f2;
+      --paper: #fffefa;
+      --paper-2: #f8faf7;
+      --ink: #1f2725;
+      --body: #46504d;
+      --muted: #71807b;
+      --line: #d7ded7;
+      --green: #315d50;
+      --green-2: #5e7f72;
+      --blue: #2e6475;
+      --clay: #b05b4e;
+      --gold: #a8873f;
+      --soft-blue: #e8f1f3;
+      --soft-green: #e9f0ea;
+      --soft-clay: #f5e8e4;
+      --shadow: 0 18px 48px rgba(40, 58, 52, .11);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(49,93,80,.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(49,93,80,.045) 1px, transparent 1px),
+        var(--bg);
+      background-size: 48px 48px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .deck {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 30px 0 72px;
+    }
+
+    .watermark {
+      position: fixed;
+      right: 22px;
+      bottom: 18px;
+      z-index: 20;
+      pointer-events: none;
+      color: rgba(49, 93, 80, .18);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", Georgia, "Times New Roman", serif;
+      font-size: clamp(18px, 2vw, 30px);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-align: right;
+      transform: rotate(-4deg);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .brandmark {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brandmark img {
+      display: block;
+      width: auto;
+      height: 28px;
+    }
+
+    .doc-status {
+      text-align: right;
+    }
+
+    .sheet {
+      position: relative;
+      margin: 18px 0;
+      padding: 42px;
+      background: rgba(255, 254, 250, .94);
+      border: 1px solid rgba(215, 222, 215, .96);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--green), var(--blue), var(--clay));
+    }
+
+    .cover {
+      min-height: 700px;
+      display: grid;
+      align-content: space-between;
+      padding: 54px 58px;
+    }
+
+    .cover::before {
+      width: 9px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 980px;
+      color: var(--green);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6.2vw, 78px);
+      font-weight: 500;
+      line-height: 1.02;
+    }
+
+    .subtitle {
+      max-width: 880px;
+      margin: 26px 0 0;
+      color: var(--body);
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 28px;
+      align-items: end;
+      margin-top: 44px;
+    }
+
+    .statement {
+      padding: 24px 26px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: var(--radius);
+      background: var(--paper-2);
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .prepared {
+      display: grid;
+      gap: 8px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft-green);
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .prepared strong {
+      color: var(--green);
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .toc a {
+      display: block;
+      min-height: 94px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .72);
+      text-decoration: none;
+      color: var(--body);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .toc b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 18px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", Georgia, "Times New Roman", serif;
+      font-weight: 600;
+    }
+
+    .chapter-title {
+      min-height: 360px;
+      display: grid;
+      align-content: center;
+      background:
+        linear-gradient(115deg, rgba(49,93,80,.1), transparent 48%),
+        var(--paper);
+    }
+
+    .chapter-title h2 {
+      max-width: 920px;
+      color: var(--green);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 68px);
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    .chapter-title p {
+      max-width: 860px;
+      margin-top: 22px;
+      color: var(--body);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .page-head {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 26px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-no {
+      color: var(--green);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .page-head h2 {
+      color: var(--ink);
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .page-head p {
+      max-width: 900px;
+      margin: 10px 0 0;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    h3 {
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    h4 {
+      margin: 0 0 9px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      color: var(--body);
+      line-height: 1.85;
+    }
+
+    p + p {
+      margin-top: 10px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--body);
+      line-height: 1.78;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper-2);
+    }
+
+    .card.green { background: var(--soft-green); }
+    .card.blue { background: var(--soft-blue); }
+    .card.clay { background: var(--soft-clay); }
+
+    .label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .callout {
+      margin-top: 18px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: var(--radius);
+      background: #f7fbfc;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .quote {
+      margin-top: 22px;
+      padding: 28px;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", Georgia, "Times New Roman", serif;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.42;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper-2);
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.72;
+    }
+
+    th {
+      color: var(--green);
+      background: #e6eee9;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    th:last-child, td:last-child { border-right: 0; }
+
+    .matrix-table td:first-child {
+      width: 18%;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .idea {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper-2);
+    }
+
+    .idea + .idea {
+      margin-top: 16px;
+    }
+
+    .idea-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .idea-head span {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .idea-section {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(215,222,215,.72);
+    }
+
+    .idea-section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 5px 9px;
+      border: 1px solid rgba(49,93,80,.25);
+      border-radius: 99px;
+      color: var(--green);
+      background: rgba(49,93,80,.07);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .month {
+      min-height: 210px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper-2);
+    }
+
+    .month b {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .month strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    .footer {
+      margin: 24px 0 0;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .usage-note {
+      display: block;
+      margin-top: 8px;
+      color: var(--body);
+    }
+
+    @media (max-width: 1080px) {
+      .toc { grid-template-columns: repeat(4, 1fr); }
+      .timeline { grid-template-columns: repeat(3, 1fr); }
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 860px) {
+      .deck { width: min(100% - 24px, 1180px); }
+      .sheet,
+      .cover { padding: 28px 22px; }
+      .cover-grid,
+      .page-head,
+      .idea-section,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .toc,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+      .doc-status {
+        text-align: left;
+      }
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+      .idea-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      html,
+      body {
+        background: #fff;
+      }
+
+      .deck {
+        width: 100%;
+        padding: 0;
+      }
+
+      .topbar,
+      .toc {
+        display: none;
+      }
+
+      .sheet {
+        min-height: auto;
+        margin: 0 0 8mm;
+        padding: 12mm;
+        border: 1px solid #d9ded8;
+        box-shadow: none;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .chapter-title,
+      .cover {
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .idea,
+      .card,
+      table,
+      .callout {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .watermark {
+        right: 12mm;
+        bottom: 9mm;
+        color: rgba(49, 93, 80, .14);
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="watermark">Zhang Fei / 張霏</div>
+
+  <main class="deck">
+    <header class="topbar">
+      <div class="brandmark">
+        <img src="https://mindoo.co.jp/cdn/shop/files/logo_x30@2x.png?v=1686201160" alt="Mindoo Technology logo">
+        <span>Video Director 半年間コンテンツ提案</span>
+      </div>
+      <div class="doc-status">作成：Zhang Fei / 張霏 · 提案ドラフト / 2026</div>
+    </header>
+
+    <section class="sheet cover" id="cover">
+      <div>
+        <p class="eyebrow">Mindoo Technology / Video Director Proposal</p>
+        <h1>半年間ブランド動画コンテンツ制作マトリクス</h1>
+        <p class="subtitle">
+          本提案は Video Director の視点から、Mindoo の製品理解、生活習慣の形成、ブランドのビジュアルトーン、コンテンツ資産の再活用を軸に、実行可能で継続性があり、複数プラットフォームへ展開できる半年間の動画コンテンツシステムを設計するものです。
+        </p>
+      </div>
+
+      <div>
+        <div class="cover-grid">
+          <div class="statement">
+            中心となる判断：Mindoo のコンテンツ課題は、単に「製品が清掃できる」と説明することではありません。ユーザーに「いつ使うのか」「なぜ使う価値があるのか」「使った後の生活がどう変わるのか」を理解してもらうことです。半年間のコンテンツは、機能への信頼から始まり、日常習慣へ進み、最終的にブランド記憶として蓄積される必要があります。
+          </div>
+          <div class="prepared">
+            <span><strong>作成者</strong> Zhang Fei / 張霏</span>
+            <span><strong>用途</strong> Mindoo Technology 面談用ディスカッション資料</span>
+            <span><strong>状態</strong> オリジナル提案ドラフト</span>
+            <span><strong>形式</strong> HTML マスター / PDF 出力対応レイアウト</span>
+          </div>
+        </div>
+
+        <nav class="toc" aria-label="Table of contents">
+          <a href="#chapter-1"><b>01</b>ブランド戦略インサイト</a>
+          <a href="#chapter-2"><b>02</b>コンテンツ戦略目標</a>
+          <a href="#chapter-3"><b>03</b>ビッグアイデア設計</a>
+          <a href="#chapter-4"><b>04</b>コンテンツ配信マトリクス</a>
+          <a href="#chapter-5"><b>05</b>コンテンツ制作規定</a>
+          <a href="#chapter-6"><b>06</b>半年間コンテンツカレンダー</a>
+          <a href="#chapter-7"><b>07</b>協業と最適化の仕組み</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="sheet chapter-title" id="chapter-1">
+      <p class="eyebrow">Chapter 01</p>
+      <h2>ブランド戦略インサイト</h2>
+      <p>
+        第1章では、Mindoo の半年間コンテンツの出発点を定義します。これは単なる清掃家電のプロモーションではなく、「床清掃の習慣をどのように日本の家庭の日常へ入れていくか」というコンテンツ教育の課題です。
+      </p>
+    </section>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">1-1</div>
+        <div>
+          <h2>Mindoo のコンテンツ課題は、製品紹介ではなく、新しい床清掃習慣をつくることです。</h2>
+          <p>
+            Mindoo が向き合うべき課題は、単なる製品認知ではなく、生活習慣の転換です。ユーザーは製品の存在を知るだけでなく、食後、帰宅後、ペットの散歩後、季節の変わり目、年末の大掃除といった具体的な生活リズムの中に、どのように自然に入ってくるのかを理解する必要があります。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="card green">
+          <span class="label">ステップ 01</span>
+          <h3>問題を可視化する</h3>
+          <p>床のベタつき、足跡、油はね、毛、玄関の汚れは偶発的な問題ではなく、日常で繰り返し発生する生活の細部であると認識してもらいます。</p>
+        </div>
+        <div class="card blue">
+          <span class="label">ステップ 02</span>
+          <h3>機能を理解する</h3>
+          <p>ワンカット撮影、汚れの比較、White Box 実験、実生活シーンを通じて、吸引と水拭きを同時に行う効果と効率を信頼してもらいます。</p>
+        </div>
+        <div class="card clay">
+          <span class="label">ステップ 03</span>
+          <h3>使用ハードルを下げる</h3>
+          <p>汚水処理、メンテナンス、充電、重さ、階段移動、タンクの転倒リスクなど、購入前・使用前の現実的な疑問に答えます。</p>
+        </div>
+        <div class="card">
+          <span class="label">ステップ 04</span>
+          <h3>習慣化する</h3>
+          <p>Mindoo を「たまに使う清掃道具」から、食後3分の reset、帰宅後の reset、季節の清掃習慣の一部へ変えていきます。</p>
+        </div>
+      </div>
+
+      <div class="quote">
+        半年間コンテンツの核心は、製品をより多く語ることではなく、ユーザーが「自分も使う」と想像しやすくすることです。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">1-2</div>
+        <div>
+          <h2>「清掃ツール」から「空間と気持ちを reset するツール」へ。</h2>
+          <p>
+            Mindoo の公式文脈には「もう掃除と呼ばない。心も洗う掃除へ。」という表現があります。この言葉の価値は、清掃を単なる労働として定義せず、気持ち、空間、生活の回復と結びつけている点にあります。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="label">ブランド提案</span>
+          <h3>推奨ポジショニング文</h3>
+          <p>Mindoo は、床清掃を日常生活のリズムに組み込むための家庭用ツールです。</p>
+          <div class="callout">
+            映像表現寄りの表現：清掃を家事ではなく、空間と気持ちを整える reset に変える。
+          </div>
+        </div>
+        <div class="card">
+          <span class="label">コンテンツ上の意味</span>
+          <h3>コンテンツ表現の方向性</h3>
+          <p>
+            コンテンツでは「床がきれいになる」だけでなく、「床がきれいになった後、生活がもう一度心地よくなる」状態を見せる必要があります。製品機能は土台であり、最終的に伝えるべきことは、家庭空間に秩序が戻り、身体が心地よさを取り戻し、一日の生活状態が整うことです。
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">1-3</div>
+        <div>
+          <h2>コアユーザーは「掃除が好きな人」ではなく、生活秩序をより楽に保ちたい人です。</h2>
+          <p>
+            ターゲットユーザーは、単に家電を購入する人ではありません。家庭の床の状態を管理し、生活の快適さを保ち、反復的な労働を減らしたい人として捉えるべきです。
+          </p>
+        </div>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>ユーザータイプ</th>
+            <th>年齢 / 家庭状況</th>
+            <th>主な課題</th>
+            <th>コンテンツ切り口</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>主婦 / 家庭管理者</td>
+            <td>30-50代、子どもがいる家庭または三人家族</td>
+            <td>食後のキッチンの油汚れ、子どもの帰宅後の床汚れ、繰り返される日常清掃</td>
+            <td>家庭ショートドラマ、夕食後 reset、家庭内分担、生活課題の短尺化</td>
+          </tr>
+          <tr>
+            <td>共働き家庭</td>
+            <td>30-40代、仕事と家庭の時間が限られている</td>
+            <td>従来の清掃プロセスを完了する時間がなく、より短い手順を求めている</td>
+            <td>3分 reset、使用ハードルの解消、食後に素早く空間を戻す表現</td>
+          </tr>
+          <tr>
+            <td>ペット家庭</td>
+            <td>30-50代、犬猫と暮らす家庭</td>
+            <td>足跡、毛、におい、玄関とリビングの床汚れ</td>
+            <td>ペット帰宅シーン、Before / After、ワンカット清掃</td>
+          </tr>
+          <tr>
+            <td>都市部の一人暮らしワーカー</td>
+            <td>20-40代、住空間の質を重視</td>
+            <td>部屋を整えたいが、清掃動作を面倒な負担にしたくない</td>
+            <td>清掃の儀式感、音楽、服装、夜の生活リズム</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">1-4</div>
+        <div>
+          <h2>ユーザーが納得すべきなのは「清掃効果」だけではなく、「本当に毎日使いたいと思えるか」です。</h2>
+          <p>
+            吸引と水拭きを一体化した製品において、購入と継続使用に大きく影響するのは、ユーザーが日常の細部をどう想像できるかです。使用前は面倒ではないか、使用後の手入れは負担にならないか、移動はしやすいか、汚水処理に不快感はないか、住環境に合うかといった点が判断材料になります。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card green">
+          <span class="label">機能面の課題</span>
+          <h3>機能面の課題</h3>
+          <ul>
+            <li>床のベタつき、汚れ残り、キッチンの油はね。</li>
+            <li>ペットの足跡、毛、玄関の汚れ。</li>
+            <li>子どもが持ち込む泥、食べこぼし、飲み物の跡。</li>
+            <li>梅雨、夏の素足、年末大掃除など、季節ごとの床問題。</li>
+          </ul>
+        </div>
+        <div class="card clay">
+          <span class="label">使用ハードル</span>
+          <h3>使用ハードルと購入不安</h3>
+          <ul>
+            <li>汚水処理に不快感がないか、水捨てや洗浄が面倒ではないか。</li>
+            <li>本体の給電、充電、コードまわりが複雑ではないか。</li>
+            <li>本体が重すぎず、移動がしやすいか。</li>
+            <li>小規模な戸建てで階段移動しやすいか。</li>
+            <li>階段移動や持ち運び中にタンクが倒れるリスクはないか。</li>
+            <li>異なる階層や床材に適用できるか。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        コンテンツ戦略上の意味：これらの疑問は、取扱説明書や商品ページだけで回答すべきものではありません。「購入不安を解消する動画」として可視化するべきです。重量、階段移動、タンク構造、汚水処理方法、給電・充電動線などは、撮影前に製品 / 技術チームと公開可能な表現範囲を確認する必要があります。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">1-5</div>
+        <div>
+          <h2>Benchmark ではブランドトーンだけでなく、具体的な撮り方、証明方法、ユーザー不安への応答も見る必要があります。</h2>
+          <p>
+            Mindoo が参考にすべき対象は、清掃家電ブランドだけではありません。ライフスタイル家電ブランド、高級ホームウェアブランドも含めて見るべきです。それぞれが、機能の可視化、リアルな証明、生活感情、季節感、器物としての美学といった異なる学びを提供します。
+          </p>
+        </div>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Benchmark</th>
+            <th>アカウント / 動画スタイルの要約</th>
+            <th>Mindoo への示唆</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dyson</td>
+            <td>技術の可視化が非常に強い。ガラス板を使った清掃撮影、ラボでの比較、技術者の出演解説、内部構造の CG 可視化、製品ごとの使用シーンを軸にした短尺クリエイティブなどが多い。</td>
+            <td>清掃プロセスの可視化、ラボ型の証明、使用シーンのマトリクスは参考にできる。ただし、ビジュアル面では完全に冷たいテクノロジー路線へ寄せる必要はない。内部構造 CG は、製品価値の理解に直結する場合のみ優先すべき。</td>
+          </tr>
+          <tr>
+            <td>Bissell / Shark</td>
+            <td>より生活に近く、KOC / UGC 風の動画が多い。画面は必ずしも洗練されていないが、リアルな家庭環境、ワンカット、汚れの Before / After、即時的な清掃効果を重視している。</td>
+            <td>ワンカットは、機能証明コンテンツにおける最も重要なリアリティの源泉です。キッチン、ペット、玄関などのシーンでは、過度な編集よりも信頼を生みやすい。</td>
+          </tr>
+          <tr>
+            <td>BALMUDA</td>
+            <td>公式動画自体が必ずしも突出しているわけではないが、製品デザインに話題性があり、レビュー、SNS、ライフスタイル系コンテンツで二次拡散されやすい。高再生レビューが重要な欠点を指摘した場合、購入判断に大きく影響する。</td>
+            <td>SNS コメント、KOC コンテンツ、高再生レビュー動画を継続的に観察する必要がある。コンテンツ戦略は発信だけでなく、ユーザーの実際の疑問に応答し、購入判断に影響する評価点を早めに把握することも含む。</td>
+          </tr>
+          <tr>
+            <td>Ffern</td>
+            <td>季節、自然光、ポスター感、ホームページと Instagram 映像の一貫性を重視している。機能説明に頼らず、感情、時間、自然、感覚を通じてブランド記憶をつくっている。</td>
+            <td>季節感とビジュアル統一性を学ぶ対象として適している。特に Seasonal Living、Quiet Domestic Reset、ライフスタイル短編、ホームページビジュアルに応用できる。</td>
+          </tr>
+          <tr>
+            <td>Georg Jensen</td>
+            <td>器物としての美学が強く、動画や静物撮影は上質で抑制され、ややクールな印象がある。商品は、アート性と長期所有感を持つホームウェアとして扱われている。</td>
+            <td>Mindoo は、ツール表現からライフスタイル文脈へ入るだけでなく、製品そのものをアート化し、空間の中の器物、静物、長く家庭に寄り添う存在として撮ることも試せる。</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">1-6</div>
+        <div>
+          <h2>ビジュアルでは「機能の信頼性」と「生活の質感」のバランスをつくる。</h2>
+          <p>
+            Mindoo のビジュアルシステムは、機能証明に向けたラインと、ライフスタイルに向けたラインの二つに分けられます。前者は製品が有効であると信じてもらうため、後者は製品を自分の生活に置きたいと思ってもらうためのものです。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <span class="label">証明系ビジュアル</span>
+          <h3>機能証明ビジュアル</h3>
+          <p>白い空間、明確な汚れ、強いコントラスト、編集を抑えたワンカット、ラボ型の舞台美術。White Box Proof、Cleaning Proof、How-to、使用ハードル解消コンテンツに適しています。</p>
+        </div>
+        <div class="card green">
+          <span class="label">ライフスタイル系ビジュアル</span>
+          <h3>ライフスタイルビジュアル</h3>
+          <p>自然光、木の床、季節色、静かな構図、生活動作、空間の余白。Daily Reset、Seasonal Living、Quiet Domestic Reset、Editorial Lifestyle に適しています。</p>
+        </div>
+      </div>
+
+      <div class="grid-4" style="margin-top:16px;">
+        <div class="card">
+          <h3>清潔だが冷たくしない</h3>
+          <p>機能証明にはラボ感があってよいが、過度に冷たいテクノロジー感は避ける。</p>
+        </div>
+        <div class="card">
+          <h3>生活感はあるが雑然とさせない</h3>
+          <p>生活シーンを背景にする場合、リアリティと同時に整った画面構造が必要です。</p>
+        </div>
+        <div class="card">
+          <h3>機能は明確に、売り込みすぎない</h3>
+          <p>KOC / UGC コンテンツでは過度な訴求を避け、一部の動画では言語情報を減らす。</p>
+        </div>
+        <div class="card">
+          <h3>情緒は穏やかに、抽象化しすぎない</h3>
+          <p>情緒的な内容は、季節、家庭、床、清掃習慣、生活シーンに着地させる。</p>
+        </div>
+      </div>
+    </article>
+
+    <section class="sheet chapter-title" id="chapter-2">
+      <p class="eyebrow">Chapter 02</p>
+      <h2>コンテンツ戦略目標</h2>
+      <p>
+        第2章では、半年間のコンテンツが何を達成すべきかを定義します。単発の再生数だけを追うのではなく、ユーザーを「製品を知る」段階から「製品を理解する」段階へ、さらに「生活リズムに取り入れる」段階へ進めます。
+      </p>
+    </section>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">2-1</div>
+        <div>
+          <h2>半年間のコンテンツ目標：製品認知から日常使用習慣へ進める。</h2>
+          <p>
+            半年間のコンテンツは、単一動画の再生数だけを追うべきではありません。ユーザーがまず床清掃の問題に気づき、次に吸引と水拭きを一体化した機能価値を理解し、使用への不安を下げ、最終的に製品を日常生活の一部として想像できるようにする連続的な導線が必要です。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>目標レイヤー</th>
+            <th>具体目標</th>
+            <th>コンテンツの役割</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>認知形成</td>
+            <td>Mindoo がどのような生活課題を解決できるかを知ってもらう</td>
+            <td>床のベタつき、キッチンの油はね、ペットの足跡、玄関汚れなどのシーン</td>
+          </tr>
+          <tr>
+            <td>信頼形成</td>
+            <td>製品が本当に有効で、便利であると信じてもらう</td>
+            <td>ワンカット、Cleaning Proof、How-to、使用ハードルの解消</td>
+          </tr>
+          <tr>
+            <td>習慣形成</td>
+            <td>自分がいつ使うのかを想像してもらう</td>
+            <td>食後 reset、帰宅後 reset、季節清掃、家庭内分担、日常の儀式化</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">2-2</div>
+        <div>
+          <h2>清掃機能の伝達から、床のある暮らしの習慣づくりへ。</h2>
+          <p>
+            半年間コンテンツの中心的な使命は、Mindoo を「一つの清掃製品」から「ユーザーの日常生活にある固定動作」へ変えることです。コンテンツ表現は、製品効果を明確に証明することと、この製品が自分の生活リズムに自然に属していると感じてもらうことの両方を担います。
+          </p>
+        </div>
+      </div>
+
+      <div class="quote">
+        Mindoo のコンテンツは、三つの問いに継続的に答えるべきです。いつ使うのか、なぜ使う価値があるのか、使った後の生活はどう変わるのか。
+      </div>
+
+      <div class="grid-3" style="margin-top:18px;">
+        <div class="card">
+          <span class="label">使用タイミング</span>
+          <h3>いつ使うのか</h3>
+          <p>食後、帰宅後、ペットの散歩後、子どもの活動後、梅雨、季節の変わり目、年末清掃。</p>
+        </div>
+        <div class="card">
+          <span class="label">使用価値</span>
+          <h3>なぜ使う価値があるのか</h3>
+          <p>吸引と水拭きを一度で行い、清掃結果が見え、使用手順が理解しやすく、メンテナンスの負担も下げられる。</p>
+        </div>
+        <div class="card">
+          <span class="label">使用後の生活感</span>
+          <h3>使った後に生活はどう変わるのか</h3>
+          <p>床が清々しさを取り戻し、空間が静かになり、家庭の動きがより心地よく整った状態へ戻る。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">2-3</div>
+        <div>
+          <h2>ユーザーの段階ごとに、必要なコンテンツは異なる。</h2>
+          <p>
+            コンテンツマトリクスは、単にプラットフォームや動画尺で分類するのではなく、ユーザーの意思決定ジャーニーを中心に設計すべきです。段階ごとにユーザーの関心は異なり、それに対応するコンテンツ課題も異なります。
+          </p>
+        </div>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>ユーザー段階</th>
+            <th>ユーザー心理</th>
+            <th>コンテンツ課題</th>
+            <th>適したコンテンツタイプ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Awareness</td>
+            <td>自分にもこの問題があるのか？</td>
+            <td>床清掃の問題を可視化する</td>
+            <td>生活課題ショートドラマ、キッチンの油はね、ペットの足跡、玄関汚れ、子どもの帰宅後の床</td>
+          </tr>
+          <tr>
+            <td>Consideration</td>
+            <td>本当に役に立つのか？自分の家に合うのか？</td>
+            <td>機能への信頼と使用イメージをつくる</td>
+            <td>Cleaning Proof、ワンカット、White Box、家庭シーン別検証、How-to</td>
+          </tr>
+          <tr>
+            <td>Decision</td>
+            <td>買った後に後悔しないか？</td>
+            <td>購入不安を解消する</td>
+            <td>汚水処理、水捨てと洗浄、本体重量、階段移動、収納充電、KOC レビュー</td>
+          </tr>
+          <tr>
+            <td>Habit</td>
+            <td>いつ使うことになるのか？</td>
+            <td>製品を日常リズムに組み込む</td>
+            <td>夕食後3分 reset、帰宅後 reset、季節清掃、家庭内分担</td>
+          </tr>
+          <tr>
+            <td>Advocacy</td>
+            <td>おすすめしたい、真似したいと思えるか？</td>
+            <td>拡散しやすいコンテンツ形式をつくる</td>
+            <td>UGC チャレンジ、Before / After 投稿、ペット家庭投稿、日常 reset テンプレート</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">2-4</div>
+        <div>
+          <h2>コンテンツマトリクスは、再生数だけでなく五つの役割を同時に担う必要があります。</h2>
+          <p>
+            コンテンツごとに目的は異なります。注意を引くもの、機能を証明するもの、不安を下げるもの、ブランドの質感をつくるものがあります。半年間計画では、これらを連携させる必要があります。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>コンテンツ目標</th>
+            <th>核心となる問い</th>
+            <th>対応する内容方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>注意を引く</td>
+            <td>なぜユーザーはスクロールを止めるのか？</td>
+            <td>強い生活課題、強い視覚的コントラスト、時代トリップ、白い空間の汚れ</td>
+          </tr>
+          <tr>
+            <td>機能を証明する</td>
+            <td>なぜユーザーは信じるのか？</td>
+            <td>ワンカット、編集を抑えた映像、汚れの Before / After、ラボ型撮影</td>
+          </tr>
+          <tr>
+            <td>ハードルを下げる</td>
+            <td>なぜユーザーは購入に踏み切れるのか？</td>
+            <td>汚水処理、メンテナンス手順、重量、階段移動、充電収納</td>
+          </tr>
+          <tr>
+            <td>習慣をつくる</td>
+            <td>ユーザーはいつ使うのか？</td>
+            <td>食後 reset、帰宅後 reset、季節の変わり目の清掃、年末清掃</td>
+          </tr>
+          <tr>
+            <td>トーンをつくる</td>
+            <td>なぜユーザーはブランドを記憶するのか？</td>
+            <td>季節感、床文化、家事の記憶、器物美学、静かな住宅空間</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        機能浸透型コンテンツは、主に機能証明、ハードル低減、習慣形成を担います。文化哲学 / ライフスタイル型コンテンツは、主にブランドトーンと長期記憶をつくります。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">2-5</div>
+        <div>
+          <h2>KPI は、クリエイティブを縛る単一基準ではなく、改善の判断材料として扱う。</h2>
+          <p>
+            具体的な数値目標は、既存アカウントの基準値、広告予算、投稿頻度と合わせて設定する必要があります。本提案ではまず、コンテンツタイプと評価指標の対応関係を整理し、後続の最適化に使える判断フレームをつくります。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>目標タイプ</th>
+            <th>観察指標</th>
+            <th>適用プラットフォーム</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>露出</td>
+            <td>再生数、リーチ数、インプレッション増加率</td>
+            <td>TikTok、Instagram、YouTube Shorts</td>
+          </tr>
+          <tr>
+            <td>コンテンツ吸引力</td>
+            <td>冒頭3秒の維持率、完視聴率、平均視聴時間</td>
+            <td>TikTok、Shorts、Reels、YouTube</td>
+          </tr>
+          <tr>
+            <td>エンゲージメント</td>
+            <td>いいね率、コメント率、シェア率、保存率</td>
+            <td>TikTok、Instagram、X</td>
+          </tr>
+          <tr>
+            <td>信頼形成</td>
+            <td>コメント内の質問数、How-to コンテンツの視聴完了率、レビュー内容への反応</td>
+            <td>YouTube、Instagram、EC</td>
+          </tr>
+          <tr>
+            <td>転換補助</td>
+            <td>公式サイトクリック、EC クリック、商品ページ滞在、クーポン利用</td>
+            <td>Instagram、YouTube、広告配信</td>
+          </tr>
+          <tr>
+            <td>コンテンツ資産</td>
+            <td>二次編集可能な素材数、再利用可能な KOC 素材数、UGC 投稿数</td>
+            <td>全プラットフォーム</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">2-6</div>
+        <div>
+          <h2>半年間の推進順序：まず信頼をつくり、次に習慣をつくり、最後にブランド記憶をつくる。</h2>
+          <p>
+            半年間のコンテンツは、最初からすべてのアイデアを全面展開するのではなく、段階的に進めるべきです。第3章ではこの順序を 6 つの Big Idea に分解し、各月のビジュアルテーマ、コンテンツ形式、実行可能な撮影方向に対応させます。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>フェーズ</th>
+            <th>時期</th>
+            <th>重点課題</th>
+            <th>コンテンツ方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Phase 1</td>
+            <td>1-2か月目</td>
+            <td>製品理解と機能信頼をつくる</td>
+            <td>生活課題、Cleaning Proof、White Box、ワンカット</td>
+          </tr>
+          <tr>
+            <td>Phase 2</td>
+            <td>3-4か月目</td>
+            <td>日常使用習慣をつくる</td>
+            <td>三人家族、食後 reset、都市部ワーカーの清掃儀式、使用ハードルの解消</td>
+          </tr>
+          <tr>
+            <td>Phase 3</td>
+            <td>5-6か月目</td>
+            <td>ブランドトーンと長期記憶をつくる</td>
+            <td>Housework Memory、時代トリップ、季節の暮らし、床文化、器物美学</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <section class="sheet chapter-title" id="chapter-3">
+      <p class="eyebrow">Chapter 03 / Visual Director Core</p>
+      <h2>ビッグアイデア設計</h2>
+      <p>
+        第3章は本提案の中核です。半年間のコンテンツは 6 つの Big Idea によって月ごとに進行し、機能信頼から生活習慣へ、さらにブランド記憶へと発展します。具体的なアイデアは章末にまとめ、継続的に拡張できるクリエイティブライブラリとして整理します。
+      </p>
+    </section>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-1</div>
+        <div>
+          <h2>半年間のコンテンツは、単発投稿ではなく連続したビジュアルストーリーにする。</h2>
+          <p>
+            6 か月の Big Idea は、プラットフォーム別ではなく、ユーザー理解の流れに沿って設計します。まず床の問題を見せ、次に清掃効果を信じてもらい、日常使用習慣をつくり、最後にライフスタイルとブランド記憶へ入っていきます。
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="month">
+          <b>M1</b>
+          <strong>床の問題を見せる</strong>
+          <p>生活課題を可視化し、「自分の家にもある」という最初の共感をつくる。</p>
+        </div>
+        <div class="month">
+          <b>M2</b>
+          <strong>一度の清掃で証明する</strong>
+          <p>White Box、編集を抑えた映像、ワンカットで機能信頼をつくる。</p>
+        </div>
+        <div class="month">
+          <b>M3</b>
+          <strong>3 Minute Floor Reset</strong>
+          <p>清掃を食後や帰宅後の短い reset 動作へ圧縮する。</p>
+        </div>
+        <div class="month">
+          <b>M4</b>
+          <strong>素足で暮らす</strong>
+          <p>床、素足、木質空間から日本の住文化へ入る。</p>
+        </div>
+        <div class="month">
+          <b>M5</b>
+          <strong>家事の時間記憶</strong>
+          <p>家事、時間、家庭内分担を通じて情緒と文化の支点をつくる。</p>
+        </div>
+        <div class="month">
+          <b>M6</b>
+          <strong>一年を通した床のある暮らし</strong>
+          <p>四季、行事、住宅空間を長期的なブランド資産として統合する。</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        構造判断：M1-M3 はユーザーに製品を信じてもらう段階、M4-M6 はブランドを記憶してもらう段階です。機能浸透型コンテンツと文化哲学 / ライフスタイル型コンテンツは別々のルートではなく、同じユーザー理解プロセスの前半と後半です。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-2</div>
+        <div>
+          <h2>Big Idea 01：床の問題を見せる</h2>
+          <p>
+            日常家庭で見過ごされやすい床の問題を可視化し、Mindoo が毎日起こるリアルな生活シーンに対応する製品であることを理解してもらいます。
+          </p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <div class="idea-head">
+          <h3>テーマ名：床の問題を見せる</h3>
+          <span>M1 / Functional Awareness</span>
+        </div>
+        <div class="idea-section">
+          <h4>クリエイティブ方向</h4>
+          <p>日本家庭に実際にある床の問題から出発し、食後のキッチンのベタつき、玄関の泥汚れ、ペットの足跡、子どもの帰宅後の床跡を、見られ、共感され、解決できる生活課題として描きます。</p>
+        </div>
+        <div class="idea-section">
+          <h4>Director's Statement</h4>
+          <p>
+            この月のビジュアル重点は、製品を過度に「高級」に見せることではありません。まずユーザーに、自分の家でも見慣れた問題を見せることです。カメラは日常生活に近づけながらも、構図は清潔で整理されている必要があります。問題が明確に現れ、製品の介入が自然に起こることが重要です。ここでの Mindoo は突然現れる広告物ではなく、家庭の秩序が戻っていくプロセスの中で合理的に登場する道具です。画面にはリアルな生活感を残しながら、雑然とした家庭記録にはしない。ユーザーの最初の反応は「このシーンは自分の家でも起こる」であるべきです。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>Moodboard 描写</h4>
+          <p>
+            自然光、リアルな住宅、低い床目線、キッチンと玄関の動線、ペットの足跡、子どもの活動後の床跡。参考方向は、Bissell / Shark の家庭ワンカット、日本の住宅生活系 Vlog の自然光、ペット家庭短尺動画における即時的な問題提示です。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>主要コンテンツ形態</h4>
+          <p>キービジュアル 4 点、メイン動画 1 本、関連短尺動画 8-12 本。TikTok / Shorts / Reels / EC FAQ 素材へ分解可能。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-3</div>
+        <div>
+          <h2>Big Idea 02：White Box Proof / 一度の清掃で証明する</h2>
+          <p>
+            ミニマルな白い空間、強いコントラストの汚れ、ワンカット撮影によって、清掃効果を信頼性の高い視覚的証拠に変えます。
+          </p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <div class="idea-head">
+          <h3>テーマ名：White Box Proof</h3>
+          <span>M2 / Cleaning Proof</span>
+        </div>
+        <div class="idea-section">
+          <h4>クリエイティブ方向</h4>
+          <p>よくある「科学実験室」的な表現を、より記憶に残る「ミニマルなラボ + 舞台美術 + 広告写真」へ変換します。画面にあるのは、真っ白な空間、Mindoo、鮮やかな服を着た人物、そして整然と並べられた強い汚れだけです。</p>
+        </div>
+        <div class="idea-section">
+          <h4>Director's Statement</h4>
+          <p>
+            この段階では機能への信頼をつくる必要があります。画面は生活現場からラボ型の舞台へ移りますが、冷たいテクノロジー広告ではなく、むしろ視覚装置に近いものです。真っ白な空間、鮮やかな人物、整列した汚れ、明確な清掃経路。すべての編集はリアリティのためにあり、遮りやジャンプカットはできるだけ減らします。観客は一つのショットの中で問題、動作、結果を見る必要があります。それによって「自分の目で効果を見た」という判断が生まれます。白い空間は汚れを隠せず、清掃結果をより直接的に見せます。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>Moodboard 描写</h4>
+          <p>
+            真っ白なスタジオ撮影、清潔な影、強いコントラストの汚れ、低い角度で見る製品の動線、編集を抑えた証明。参考方向は Dyson のガラス板清掃とラボ比較、清掃ブランドの one-pass challenge、ミニマルな舞台広告の構図です。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>主要コンテンツ形態</h4>
+          <p>キービジュアル 6 点、メイン動画 2 本、関連短尺動画 12-16 本。One Pass Challenge、Stain Line、No Cut Proof、Sound of Clean の 4 つのサブ形式を含められます。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-4</div>
+        <div>
+          <h2>Big Idea 03：3 Minute Floor Reset</h2>
+          <p>
+            Mindoo を「たまに使う大掃除ツール」から、食後、帰宅後、就寝前の日常的な reset 動作へ変えていきます。
+          </p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <div class="idea-head">
+          <h3>テーマ名：夕食後の 3 分間 Reset</h3>
+          <span>M3 / Daily Habit</span>
+        </div>
+        <div class="idea-section">
+          <h4>クリエイティブ方向</h4>
+          <p>清掃を「大掃除」から、毎日短く、自然で、繰り返しやすい生活動作へ変えます。製品は床がひどく汚れたときだけ登場するのではなく、食後、帰宅後、就寝前に空間を戻す動作の一部になります。</p>
+        </div>
+        <div class="idea-section">
+          <h4>Director's Statement</h4>
+          <p>
+            この段階の核心は習慣形成です。ビジュアルでは「清掃は大変」と強調するのではなく、「短く、自然で、リズムがある」と感じさせるべきです。食後のキッチンの油はね、ダイニング周辺の食べこぼし、リビングの足跡は、一つの安定した動作へ圧縮できます。Mindoo を手に取り、床を reset し、心地よい生活状態へ戻る。映像のリズムはやや軽快にし、音の設計では本体が床を滑る音、家具が戻る音、夜の空間が静かになる細部を残します。観客が見るのは労働負担ではなく、生活を整える動作です。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>Moodboard 描写</h4>
+          <p>
+            夕食後の暖かい光、キッチンとダイニングの動線、低いカメラ位置での移動、反復する動作、清掃後の静かな空間。参考方向は Fellow の儀式的な動作、BALMUDA 的な日常感情、短尺動画における反復動作と音楽リズムです。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>主要コンテンツ形態</h4>
+          <p>キービジュアル 4 点、メイン動画 1-2 本、関連短尺動画 10-14 本。家庭の食後 reset、ペット帰宅後 reset、都市部ワーカーの毎日清掃儀式を含められます。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-5</div>
+        <div>
+          <h2>Big Idea 04：素足で暮らす</h2>
+          <p>
+            日本の住文化における床、素足、木質空間から出発し、「床清掃」を身体で感じられる生活の快適さへ変換します。
+          </p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <div class="idea-head">
+          <h3>テーマ名：素足で暮らす</h3>
+          <span>M4 / Floor Culture</span>
+        </div>
+        <div class="idea-section">
+          <h4>クリエイティブ方向</h4>
+          <p>床を背景ではなく、生活のインターフェースとして扱います。素足で木の床を歩く、子どもが床に座って遊ぶ、ペットがリビングで横になる、雨季に玄関から室内へ入る。これらの画面によって「きれいな床」が具体的になります。</p>
+        </div>
+        <div class="idea-section">
+          <h4>Director's Statement</h4>
+          <p>
+            このテーマは、Mindoo を機能証明からライフスタイルへ移行させます。日本の住まいにおいて、床は背景ではなく、身体が毎日触れる生活の界面です。素足、木の床、床に座る子ども、床でくつろぐペットは、清掃を視覚的なきれいさだけでなく、身体で感じる快適さに変えます。撮影はより静かに、素材へ近づくべきです。光、足音、床の触感、空間が戻った後の清々しさを中心に撮ります。製品が常に画面の中心にいる必要はありませんが、「床のある暮らしが心地よくなる」という意味を担う必要があります。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>Moodboard 描写</h4>
+          <p>
+            木の床、素足、朝または夕方の自然光、低彩度の季節色、静かな空間。参考方向は Ffern の季節の光、Georg Jensen の器物静物、日本の住宅メディア的な空間撮影です。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>主要コンテンツ形態</h4>
+          <p>キービジュアル 6 点、メイン動画 1 本、関連短尺動画 8-10 本。Instagram Reels、Carousel、YouTube のライフスタイル長尺版に適しています。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-6</div>
+        <div>
+          <h2>Big Idea 05：Housework Memory / 家事の時間記憶</h2>
+          <p>
+            家事、時間、家庭内分担を文化的な支点とし、Mindoo をより記憶に残るストーリーコンテンツへ入れていきます。
+          </p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <div class="idea-head">
+          <h3>テーマ名：家事の時間記憶</h3>
+          <span>M5 / Cultural Storytelling</span>
+        </div>
+        <div class="idea-section">
+          <h4>クリエイティブ方向</h4>
+          <p>「もしあの時代に Mindoo があったら？」を中心の問いとして、レトロな家事の記憶、現代の清掃ツール、家庭の時間配分を接続します。静かな情緒版と、時代トリップ喜劇版に分けることができます。</p>
+        </div>
+        <div class="idea-section">
+          <h4>Director's Statement</h4>
+          <p>
+            このテーマでは、家事を単なる負担として撮るのでも、誰か一人の役割として固定するのでもなく、家庭の時間と生活の変化の中へ戻します。静かな版では、旧時代に床を繰り返し拭く身体労働を描き、Mindoo を「時間がそっと解放される」象徴として登場させます。喜劇版では、現代の製品を大正、戦国、神魔、二次元の世界へ投入し、ギャップで拡散性をつくります。二つの方向はいずれも、清掃ツールが家庭生活の時間配分をどう変えるのかという同じ問いに向かっています。ビジュアルはレトロな気配を持ちながら、現代ブランド表現としての抑制と清潔感を保つ必要があります。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>Moodboard 描写</h4>
+          <p>
+            レトロな住宅、時代衣装、低コントラストの暖色、ギャップのある小道具、喜劇的なリズムと静的な情緒の併存。参考方向は日本の時代劇における生活シーン、レトロ家電広告、短尺動画の時代トリップ喜劇です。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>主要コンテンツ形態</h4>
+          <p>ブランドメインフィルム 1 本、テーマ短編 2-3 本、関連短尺動画 12-18 本。半年間で唯一の S 級プロジェクトとして、メインフィルム、平面素材、切り出し、分岐短尺動画を集中撮影するのに適しています。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-7</div>
+        <div>
+          <h2>Big Idea 06：一年を通した床のある暮らし</h2>
+          <p>
+            Mindoo を四季、行事、年末清掃、住宅空間の中に置き、長期的に再利用できるブランドコンテンツ資産を形成します。
+          </p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <div class="idea-head">
+          <h3>テーマ名：一年を通した床のある暮らし</h3>
+          <span>M6 / Long-term Brand Asset</span>
+        </div>
+        <div class="idea-section">
+          <h4>クリエイティブ方向</h4>
+          <p>Mindoo を春の花粉、梅雨の玄関、夏の素足、秋冬の衣替え、年末大掃除といった日本の生活リズムに入れ、一年を通して繰り返し現れる空間回復のシンボルにします。</p>
+        </div>
+        <div class="idea-section">
+          <h4>Director's Statement</h4>
+          <p>
+            6か月目は、前の5か月で積み上げた機能、習慣、ライフスタイルを統合する段階です。Mindoo は一度の汚れを解決するだけでなく、一年の住まいのリズムに参加します。このテーマはより editorial に寄せることができ、毎回完全な使用動作を見せる必要はありません。ただし、製品は空間が回復した後の視覚的シンボルである必要があります。重要なのは、きれいな床は一度の結果ではなく、継続する生活状態であると記憶してもらうことです。製品は玄関、リビング、和の住宅、行事の装飾のそばに置かれ、現代家庭の秩序の一部になります。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>Moodboard 描写</h4>
+          <p>
+            四季の光、玄関、リビング、和の住宅、木の床、静物化された製品露出。参考方向は Ffern の季節コンテンツ、Georg Jensen の静物美学、BALMUDA の生活感情を含む製品映像です。
+          </p>
+        </div>
+        <div class="idea-section">
+          <h4>主要コンテンツ形態</h4>
+          <p>キービジュアル 8 点、メイン動画 1-2 本、関連短尺動画 12-16 本。後続の四半期 Campaign や Instagram ビジュアルシステムの資産基盤として使用できます。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-8</div>
+        <div>
+          <h2>具体アイデアライブラリ A：機能浸透型ビジュアルアイデア</h2>
+          <p>
+            機能浸透型コンテンツは、製品価値を生活課題の中に自然に登場させる役割を担います。各第3層アイデアは、機能証明、習慣形成、使用ハードルの解消、購入不安の解消を同時に担うことができますが、明確な主軸が必要です。
+          </p>
+        </div>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>第2層：語りの分岐</th>
+            <th>第3層：具体アイデア分岐</th>
+            <th>ビジュアル / 制作説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>具体的な生活課題型</td>
+            <td>三人家族の一日清掃ドラマ、犬の散歩後の足跡、子どもの部活後の床、天ぷら調理後のキッチン油はね。</td>
+            <td>一つの家庭の一日の中で、床は生活によって何度も汚れ、何度も軽く reset される。メイン動画は 3-5 分、各清掃課題は 15 秒短尺として同時撮影可能。</td>
+          </tr>
+          <tr>
+            <td>Cleaning Proof</td>
+            <td>White Box シリーズ、編集を抑えた一度の清掃、汚れの整列、ガラス板 / 白い床の比較。</td>
+            <td>白い空間と強い汚れで視覚的インパクトをつくり、編集を減らし、汚れ、清掃動作、結果がすべて見えるようにする。</td>
+          </tr>
+          <tr>
+            <td>Daily Reset</td>
+            <td>夕食後3分 reset、都市部ワーカーの毎日清掃儀式、服装と音楽を変えた反復短編。</td>
+            <td>反復動作、音楽リズム、低角度撮影、固定された製品露出アニメーションによって、清掃を日々の儀式にする。</td>
+          </tr>
+          <tr>
+            <td>使用ハードルの解消</td>
+            <td>汚水処理、水捨てと洗浄、充電収納、給電動線、階段移動、タンク転倒リスクの説明。</td>
+            <td>製品 / 技術チームと公開可能な機能表現の範囲を確認した上で、How-to、FAQ、購入不安解消の短編へ転換する。</td>
+          </tr>
+          <tr>
+            <td>購入不安の解消</td>
+            <td>ペット家庭、子どものいる家庭、キッチン、玄関、木の床、小規模戸建て。</td>
+            <td>各シーンで一つの購入疑問に答える。この家庭で使えるか、この床材で使えるか、この手順は面倒ではないか。</td>
+          </tr>
+          <tr>
+            <td>Professional Use Scene</td>
+            <td>介護施設、病院、保育施設、美容院、ペットショップ、民泊。</td>
+            <td>営業資料や展示会素材に適している。大量の床清掃ニーズ、低干渉、短時間で空間秩序を戻す点を強調する。</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-9</div>
+        <div>
+          <h2>具体アイデアライブラリ B：文化哲学 / ライフスタイル型ビジュアルアイデア</h2>
+          <p>
+            文化哲学 / ライフスタイル型コンテンツは、機能説明を中心にしません。Mindoo を家事、時間、床、季節、住宅空間の中に置きます。機能は背景へ退き、世界観が成立する前提になります。
+          </p>
+        </div>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>第2層：語りの分岐</th>
+            <th>第3層：具体アイデア分岐</th>
+            <th>ビジュアル / 制作説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Housework Memory</td>
+            <td>もしあの時代に Mindoo があったら、家事と時間、家庭内分担、レトロで静かな版。</td>
+            <td>重要なのは懐古そのものではなく、旧時代の家事労働と現代ツールの対比を通じて、時間の解放と家庭生活の変化を表現すること。</td>
+          </tr>
+          <tr>
+            <td>Temporal Imagination</td>
+            <td>大正時代、戦国時代、神魔世界、二次元世界、発電方法の発想。</td>
+            <td>時代トリップ喜劇は TikTok / Shorts に適している。戦国時代の Mindoo はどう発電するのか。水車でも人力でもなく、最後は陰陽師が雷を召喚する。神魔世界では魔力、二次元世界では三次元から延長コードを持ち込む。</td>
+          </tr>
+          <tr>
+            <td>Quiet Domestic Reset</td>
+            <td>神社、寺院、和風邸宅、木の床空間、人物なしの静的な植え込み。</td>
+            <td>まずは古民家、旅館、茶室、和風邸宅から始められる。商業感は抑え、製品は場が整った後の静かな道具として登場する。</td>
+          </tr>
+          <tr>
+            <td>Floor Culture</td>
+            <td>素足、住まい、木の床、床に座る子ども、床でくつろぐペット。</td>
+            <td>床を背景から、身体が毎日触れる生活の界面へ変換し、きれいさを感覚できる快適さに変える。</td>
+          </tr>
+          <tr>
+            <td>Seasonal Living</td>
+            <td>春の花粉、梅雨の玄関、夏の素足、秋冬の衣替え、年末大掃除。</td>
+            <td>日本の生活リズムに沿ってユーザーの日常へ入り、Instagram のビジュアル統一性を長期的に構築するのに適している。</td>
+          </tr>
+          <tr>
+            <td>Editorial Lifestyle</td>
+            <td>器物静物、住宅の光、空間素材、製品のアート化、長期所有感。</td>
+            <td>高級ホームウェアの撮影方法を学び、製品をツールではなく、生活空間の中で長く所有したい対象として撮る。</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">3-10</div>
+        <div>
+          <h2>本章まとめ：6 つの Big Idea が「機能信頼 → 使用習慣 → ブランド記憶」を完成させる。</h2>
+          <p>
+            第3章の核心はアイデアの数ではなく、アイデア同士の順序関係です。まず機能証明で「信じられるか」を解決し、次に日常 reset で「使うか」を解決し、最後にライフスタイルと文化コンテンツで「記憶されるか」を解決します。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card blue">
+          <span class="label">M1-M2</span>
+          <h3>機能信頼</h3>
+          <p>ユーザーに問題を見せ、Mindoo の清掃効果を信じてもらう。重点素材はワンカット、White Box、生活課題短編。</p>
+        </div>
+        <div class="card green">
+          <span class="label">M3-M4</span>
+          <h3>使用習慣</h3>
+          <p>Mindoo を食後、帰宅後、素足の暮らし、床の触感の中へ置き、製品を日常リズムに入れる。</p>
+        </div>
+        <div class="card clay">
+          <span class="label">M5-M6</span>
+          <h3>ブランド記憶</h3>
+          <p>家事の時間、時代想像、季節の暮らし、器物美学を通じて、ブランドにより長期的なコンテンツ資産を持たせる。</p>
+        </div>
+      </div>
+    </article>
+
+    <section class="sheet chapter-title" id="chapter-4">
+      <p class="eyebrow">Chapter 04</p>
+      <h2>コンテンツ配信マトリクス</h2>
+      <p>
+        第4章ではプラットフォームを起点にしますが、第3章で定義した Big Idea の構造は崩しません。同じクリエイティブ資産でも、プラットフォームごとに担う役割は異なります。短尺動画は注意を引き、Instagram はビジュアル印象をつくり、YouTube は長い内容を受け止め、X は反応を観察します。
+      </p>
+    </section>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">4-1</div>
+        <div>
+          <h2>プラットフォームはコンテンツ倉庫ではなく、ユーザー意思決定ジャーニーの入口です。</h2>
+          <p>
+            同じ動画を機械的に全プラットフォームへ同期すべきではありません。プラットフォームごとに視聴状態、滞在時間、意思決定段階が異なるため、同じ Big Idea でも異なるバージョンへ分解する必要があります。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>プラットフォーム</th>
+            <th>核心タスク</th>
+            <th>ユーザー状態</th>
+            <th>適した内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TikTok / Shorts</td>
+            <td>素早く注意を引き、拡散をつくる</td>
+            <td>受動的に流れてくる、滞在時間が短い</td>
+            <td>汚れのコントラスト、White Box、ワンカット、時代トリップ喜劇</td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td>審美記憶とライフスタイル認同をつくる</td>
+            <td>能動的に閲覧、保存、ブランドトーンに注目</td>
+            <td>Reels、Carousel、季節ビジュアル、住宅空間、静物</td>
+          </tr>
+          <tr>
+            <td>YouTube</td>
+            <td>完全な理解、長尺コンテンツ、深い証明</td>
+            <td>能動的に検索、または深く視聴</td>
+            <td>メインフィルム、How-to、レビューへの応答、Proof compilation</td>
+          </tr>
+          <tr>
+            <td>X</td>
+            <td>軽い拡散とユーザー反応の観察</td>
+            <td>タイムライン閲覧、話題参加</td>
+            <td>告知、短い視点、コメント引用、施策拡散</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">4-2</div>
+        <div>
+          <h2>短尺動画の役割は、3秒以内に問題または結果を見せることです。</h2>
+          <p>
+            TikTok と YouTube Shorts は、機能浸透型コンテンツに適しています。特に、強い問題、強いギャップ、強い結果を持つクリエイティブと相性がよい。動画内で多くのブランド理念を説明する必要はなく、最短時間で「問題を見る → 清掃を見る → 結果を見る」を完了させます。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="label">適した形式</span>
+          <h3>適したコンテンツタイプ</h3>
+          <p>White Box Proof、ワンカット清掃、キッチンの油はね、ペットの足跡、玄関の泥汚れ、子どもの帰宅後の床、時代トリップ喜劇、3 Minute Reset。</p>
+        </div>
+        <div class="card">
+          <span class="label">編集原則</span>
+          <h3>編集原則</h3>
+          <p>0-3 秒で問題またはギャップを直接見せる。3-15 秒で Mindoo の介入と連続清掃を見せる。15-30 秒で結果画面を見せる。汚れは必ず見える必要があり、製品の動きは編集で切りすぎない。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">4-3</div>
+        <div>
+          <h2>Instagram の役割は、Mindoo を具体的な生活シーンの中に意味として植え込むことです。</h2>
+          <p>
+            Instagram は、ブランドのビジュアルトーン、ライフスタイルの蓄積、コンテンツ資産の整理に適しています。アカウント全体のスタイルは統一される必要があり、分散した KOC コンテンツによってブランドの視覚印象を崩すことは避けるべきです。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card green">
+          <span class="label">位置づけ</span>
+          <h3>コンテンツポジション</h3>
+          <p>
+            Mindoo は Instagram 上で、現代家庭、伝統行事、季節変化、レトロ美学、現代住宅、和の空間、静物構図の中に置くことができます。重点は機能を頻繁に説明することではなく、製品が画面の中で「空間の回復」「生活秩序」「清掃後の心地よさ」といった意味を担うことです。
+          </p>
+        </div>
+        <div class="card blue">
+          <span class="label">形式</span>
+          <h3>コンテンツ形式</h3>
+          <ul>
+            <li>Reels：クリエイティブ短編、ムード動画、季節テーマ、静物化した製品露出。</li>
+            <li>Carousel：使用方法、シーン解説、季節テーマ、キービジュアルストーリー。</li>
+            <li>Feed：Campaign キービジュアル、製品静物、住宅空間ビジュアル。</li>
+            <li>Stories：施策告知、視覚統一されたユーザー反応、軽い FAQ。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        Instagram は通常の KOC 動画投稿を担わない、または厳格に統一されたビジュアル Brief のもとでのみ協業するべきです。KOC / UGC コンテンツを使用する場合は、ビジュアル選定と二次パッケージ化を行う必要があります。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">4-4</div>
+        <div>
+          <h2>YouTube は Instagram のビジュアルシステムの延長であり、より長い内容を受け止める器です。</h2>
+          <p>
+            YouTube は、Instagram とは別のコンテンツシステムを一から立ち上げる必要はありません。Instagram のビジュアルコンテンツの延長として、Instagram には収まりきらない長尺動画、完全なストーリー、長尺クリエイティブ短編、ブランドテーマフィルム、How-to、機能証明まとめ、レビューへの応答を受け止めます。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="label">適した内容</span>
+          <h3>適したコンテンツタイプ</h3>
+          <p>Instagram Reels の長尺版、ブランドテーマフィルム、三人家族の一日清掃ドラマ、White Box Proof まとめ、How-to / Maintenance、購入不安解消、KOC の深い使用レビュー。</p>
+        </div>
+        <div class="card">
+          <span class="label">視覚的連続性</span>
+          <h3>ビジュアル原則</h3>
+          <p>YouTube は Instagram より多くの情報を扱えますが、ビジュアルスタイルは分断させるべきではありません。長尺動画でも、色調、字幕、カメラ言語、製品露出方法は統一する必要があります。2分を超える内容でも、明確なテーマが必要です。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">4-5</div>
+        <div>
+          <h2>X は主ビジュアルの場ではなく、話題拡散とユーザー反応観察の窓口です。</h2>
+          <p>
+            X は軽い投稿、話題テスト、ユーザーコメント観察、外部コンテンツ引用を担えます。価値は必ずしも直接転換ではなく、製品機能、価格、メンテナンス、リアルな評価に対する反応を素早く捉えることにあります。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="label">話題化</span>
+          <h3>生活課題から入る</h3>
+          <p>例：「食後の床のベタつき、どうしてますか？」のような短い問いで、ユーザーの共感点をテストします。</p>
+        </div>
+        <div class="card">
+          <span class="label">反応観察</span>
+          <h3>コメント観察</h3>
+          <p>汚水処理、重量、収納、メンテナンス、価格などのコメントを重点的に観察し、次のコンテンツ企画へ入力します。</p>
+        </div>
+        <div class="card">
+          <span class="label">配信</span>
+          <h3>軽量拡散</h3>
+          <p>TikTok / Shorts の切り出し、メディアコンテンツ、KOC レビュー引用、Campaign 更新を投稿します。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">4-6</div>
+        <div>
+          <h2>一度の撮影は一本の動画で終わらせず、再利用可能なコンテンツ資産パッケージにする。</h2>
+          <p>
+            一つの Big Idea を撮影した後は、メイン動画、短尺動画、静止画、Carousel、Story、公式サイト素材、営業補助素材を同時に生み出すべきです。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>資産タイプ</th>
+            <th>用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>16:9 メイン動画</td>
+            <td>YouTube / 公式サイト / 展示会</td>
+          </tr>
+          <tr>
+            <td>9:16 短尺動画</td>
+            <td>TikTok / Shorts / Reels</td>
+          </tr>
+          <tr>
+            <td>1:1 または 4:5 静止画</td>
+            <td>Instagram Feed / Carousel / 広告素材</td>
+          </tr>
+          <tr>
+            <td>Before / After キャプチャ</td>
+            <td>EC 商品ページ / 広告素材 / FAQ</td>
+          </tr>
+          <tr>
+            <td>字幕なしクリーン版</td>
+            <td>二次編集 / 多言語版 / 海外プラットフォーム</td>
+          </tr>
+          <tr>
+            <td>15秒 / 30秒 / 60秒版</td>
+            <td>広告配信やプラットフォーム別テスト</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <section class="sheet chapter-title" id="chapter-5">
+      <p class="eyebrow">Chapter 05 / Visual Director Core</p>
+      <h2>コンテンツ制作規定</h2>
+      <p>
+        第5章では、Mindoo の半年間コンテンツにおけるビジュアル制作システムを定義します。どの内容にどの制作仕様を使うのか、どの画面が使えるのか、どの画面がブランドに合わないのか、異なるプラットフォーム間でどう統一性を保つのかを整理します。
+      </p>
+    </section>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-1</div>
+        <div>
+          <h2>ビジュアル規定の目的は、異なるコンテンツが同じブランドから発信されているように見せることです。</h2>
+          <p>
+            半年間のコンテンツは、ブランドフィルム、短尺動画、KOC、UGC、How-to、機能証明、ライフスタイル映像など多様な形式を含みます。統一されたビジュアル規定がなければ、一本ごとの動画は成立しても、アカウント全体としての記憶点が弱くなります。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card green">
+          <span class="label">01</span>
+          <h3>ブランド印象を統一する</h3>
+          <p>プラットフォーム、尺、撮影チームが異なっても、安定した視覚識別を保つ。</p>
+        </div>
+        <div class="card blue">
+          <span class="label">02</span>
+          <h3>制作効率を高める</h3>
+          <p>同じ画角、字幕、光、カメラルールを繰り返し再利用できる。</p>
+        </div>
+        <div class="card clay">
+          <span class="label">03</span>
+          <h3>確認コストを下げる</h3>
+          <p>どの画面が使用可能で、どの表現がブランド方向に合わないかを事前に定義する。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-2</div>
+        <div>
+          <h2>コンテンツ分類の核心は、撮影回数を増やすことではなく、一回の撮影から生まれる資産量を高めることです。</h2>
+          <p>
+            Mindoo の半年間コンテンツは、プロジェクト制で制作するべきです。S 級または A 級の撮影では、企画段階からメイン動画、短尺動画、平面素材、サムネイル、Carousel、公式サイト素材、店頭素材、広告素材を同時に設計します。
+          </p>
+        </div>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>等級</th>
+            <th>コンテンツ位置づけ</th>
+            <th>半年間の頻度</th>
+            <th>制作方式</th>
+            <th>資産アウトプット</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S 級</td>
+            <td>ブランド級メインプロジェクト / 半年間の代表作</td>
+            <td>半年にメイン完成版 1 本</td>
+            <td>一つの大きなアイデアを中心に、ブランドメインフィルムを集中撮影し、複数のビジュアル資産を同時に撮影する。</td>
+            <td>メイン完成版、キービジュアル、短尺切り出し、分岐アイデア短編、平面ポスター、公式サイト / EC / 店頭素材。</td>
+          </tr>
+          <tr>
+            <td>A 級</td>
+            <td>月次または隔月テーマプロジェクト / 機能浸透型コンテンツ</td>
+            <td>2-3か月に 1 プロジェクト</td>
+            <td>一つの具体的なクリエイティブシーンを中心に、複数の機能証明と生活シーンを集中撮影する。</td>
+            <td>テーマ動画、機能短尺、Before / After、How-to 切り出し、Carousel、広告素材。</td>
+          </tr>
+          <tr>
+            <td>B 級</td>
+            <td>SNS 日常運用コンテンツ / 迅速対応コンテンツ</td>
+            <td>SNS チームの投稿頻度に合わせて調整</td>
+            <td>KOC、レビュー系クリエイター、S / A 級プロジェクトの切り出し、FAQ、軽量短尺を活用する。</td>
+            <td>プラットフォーム短尺動画、Stories、コメント応答、ランディングページ誘導素材、二次編集コンテンツ。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        これにより、撮影スタッフの稼働期間、ロケーション契約期間、すでに組まれた美術セットや照明を最大限活用し、予算ロスを抑えられます。S 級はブランド記憶をつくり、A 級は機能浸透と月次テーマを支え、B 級は SNS の投稿リズム、プラットフォーム配信、ランディングページ転換を補助します。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-3</div>
+        <div>
+          <h2>撮影前に主画角を決めておかないと、後工程の分解で画面品質が落ちます。</h2>
+          <p>
+            S 級と A 級の撮影では、横版と縦版の両構図を優先的に考えるべきです。撮影現場では安全領域を確保し、製品、人物、字幕が二次トリミングで切れないようにします。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>画角</th>
+            <th>適用プラットフォーム</th>
+            <th>適した内容</th>
+            <th>実行重点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>16:9</td>
+            <td>YouTube、公式サイト、展示会、営業資料</td>
+            <td>ブランドメインフィルム、長尺動画、機能証明まとめ、空間ストーリー</td>
+            <td>空間関係とストーリーの完全性を保つ。</td>
+          </tr>
+          <tr>
+            <td>9:16</td>
+            <td>TikTok、Shorts、Reels、Stories</td>
+            <td>強いフックの短尺動画、White Box、Reset、時代トリップ喜劇</td>
+            <td>汚れ、製品の動線、人物動作が縦版でも明確に見えること。</td>
+          </tr>
+          <tr>
+            <td>4:5</td>
+            <td>Instagram Feed、広告素材</td>
+            <td>キービジュアル、製品露出、ライフスタイル短編</td>
+            <td>統一感のある feed 資産に適している。</td>
+          </tr>
+          <tr>
+            <td>1:1</td>
+            <td>Carousel、EC、一部広告素材</td>
+            <td>Before / After、手順説明、静止画</td>
+            <td>情報密度が高く、説明型コンテンツに適している。</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-4</div>
+        <div>
+          <h2>Mindoo の光のシステムは「機能証明」と「生活の質感」の二系統に分けるべきです。</h2>
+          <p>
+            機能証明には明瞭さと信頼性が必要であり、ライフスタイルには居住感と季節感が必要です。二つのラインは相互に接続できますが、識別性のない普通の家電映像へ混ざってはいけません。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <span class="label">証明系の光</span>
+          <h3>機能証明の光</h3>
+          <p>白い空間、均一なスタジオ光、明確な影、強いコントラストの汚れ。White Box Proof、Cleaning Proof、How-to、メンテナンス説明に適用します。目的は、清掃プロセスを信頼できるものにし、汚れを見せ、結果を明確にすることです。</p>
+        </div>
+        <div class="card green">
+          <span class="label">生活感の光</span>
+          <h3>生活の質感をつくる光</h3>
+          <p>自然光、木質の反射、朝 / 夕方の暖かい光、季節色。Seasonal Living、素足で暮らす、Quiet Domestic Reset、家庭ストーリーに適用します。目的は、製品を生活の中へ入れることです。</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        色調原則：全体として清潔で、柔らかく、抑制された印象を保つ。機能証明はより明るく白く、ライフスタイルはより暖かく季節感を持たせてもよい。過度に冷たいブルー系テクノロジー感や、フィルターのかけすぎによって清潔感が落ちることは避ける。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-5</div>
+        <div>
+          <h2>床は背景ではなく、Mindoo コンテンツにおける主役の一つです。</h2>
+          <p>
+            Mindoo のコンテンツでは、観客に床を見せ、床を感じさせ、清掃後の床の状態を理解してもらう必要があります。ショットサイズの分担は、空間、人物、製品、床の関係を中心に設計します。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ショット / 角度</th>
+            <th>ストーリー上の機能</th>
+            <th>適した内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ロングショット</td>
+            <td>住宅空間、家庭動線、季節の雰囲気を立ち上げる</td>
+            <td>Seasonal Living、Quiet Domestic Reset、ブランドメインフィルム</td>
+          </tr>
+          <tr>
+            <td>ミディアムショット</td>
+            <td>人物動作、製品使用、家庭関係を見せる</td>
+            <td>Family Daily Reset、Daily Routine Ritual</td>
+          </tr>
+          <tr>
+            <td>クローズアップ</td>
+            <td>汚れ、足跡、油はね、床の触感、清掃結果を証明する</td>
+            <td>Cleaning Proof、How-to、購入不安解消</td>
+          </tr>
+          <tr>
+            <td>ローアングル</td>
+            <td>床の問題、製品の動線、素足の生活体験を強調する</td>
+            <td>素足で暮らす、Daily Reset、ペットの足跡</td>
+          </tr>
+          <tr>
+            <td>俯瞰</td>
+            <td>White Box、Before / After、汚れの配置、手順説明に適する</td>
+            <td>White Box Proof、Carousel、EC 説明素材</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-6</div>
+        <div>
+          <h2>機能コンテンツでは見やすさを、ライフスタイルコンテンツでは感じやすさを重視する。</h2>
+          <p>
+            カメラワークと編集リズムは、コンテンツの目的に従うべきです。機能証明に華美な演出は不要で、ライフスタイルに過密な説明は不要です。一方、拡散型クリエイティブにはより強い冒頭フックが必要です。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card blue">
+          <span class="label">証明</span>
+          <h3>機能証明系</h3>
+          <p>編集を少なく、遮りを少なく、派手なトランジションを少なく。固定カメラ、低位置の追従、俯瞰、ワンカットに適しています。リズムは明確で直接的に。</p>
+        </div>
+        <div class="card green">
+          <span class="label">ライフスタイル</span>
+          <h3>ライフスタイル系</h3>
+          <p>ゆっくりしたプッシュ、静止ショット、軽い手持ち、空間ショットのリズムを使える。編集は穏やかにし、光、音、空間変化を残す。</p>
+        </div>
+        <div class="card clay">
+          <span class="label">拡散</span>
+          <h3>拡散クリエイティブ系</h3>
+          <p>時代トリップ喜劇や強いギャップの短尺動画は、より速いテンポにできる。冒頭3秒に明確な視覚フックが必要。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-7</div>
+        <div>
+          <h2>製品露出は多ければよいわけではなく、登場するたびに意味が必要です。</h2>
+          <p>
+            Mindoo の製品露出は、問題解決、空間回復、またはライフスタイル上の意味に奉仕すべきです。製品が外から持ち込まれた広告小道具のように唐突に見えてはいけません。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="label">機能的露出</span>
+          <h3>機能的露出</h3>
+          <p>製品が問題を解決している状態。油はね、足跡、汚れを清掃する場面など。Proof、How-to、家庭課題コンテンツに適しています。</p>
+        </div>
+        <div class="card">
+          <span class="label">結果としての露出</span>
+          <h3>結果としての露出</h3>
+          <p>清掃後、製品が秩序を取り戻した空間に置かれている状態。Daily Reset や家庭シーンに適しています。</p>
+        </div>
+        <div class="card">
+          <span class="label">象徴的露出</span>
+          <h3>象徴的露出</h3>
+          <p>製品がライフスタイル画面の一部として、玄関、リビング、和の空間、季節シーンに登場する。</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        文脈のない製品クローズアップを繰り返すことは避ける。製品外観だけを撮り、生活状態との関係を示さないことも避ける。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-8</div>
+        <div>
+          <h2>Mindoo のコンテンツには情報が必要ですが、情報に押しつぶされてはいけません。</h2>
+          <p>
+            字幕、音、情報密度はコンテンツタイプに合わせて調整します。機能証明ではより明確に、ライフスタイルでは言語密度を下げ、画面、音、動作により多くの表現を担わせます。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="label">字幕</span>
+          <h3>字幕原則</h3>
+          <ul>
+            <li>機能証明系では短く明確な文で、汚れ、手順、結果を説明する。</li>
+            <li>ライフスタイル系では文字密度を下げ、画面と音に表現を担わせる。</li>
+            <li>KOC / UGC を二次パッケージ化する際は、字幕スタイルを統一する。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="label">音</span>
+          <h3>音の原則</h3>
+          <ul>
+            <li>清掃動作音、足音、水音、家具がわずかに動く音を残す。</li>
+            <li>音楽は感情に奉仕するもので、過度に騒がしくしない。</li>
+            <li>White Box では動作音とリズムポイントを強調し、Reset コンテンツでは軽快な反復構造を使える。</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-9</div>
+        <div>
+          <h2>ビジュアルの境界を明確にしてこそ、コンテンツは長期的にブランド感を保てます。</h2>
+          <p>
+            以下の Do's &amp; Don'ts は、撮影、編集、KOC brief、ブランド確認に使用し、異なるコンテンツ形式でも方向性を統一するためのものです。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card green">
+          <span class="label">Visual Do's</span>
+          <ul>
+            <li>明確で、清潔で、秩序のある構図を使う。</li>
+            <li>汚れ、清掃動作、結果がすべて見えるようにする。</li>
+            <li>製品を家庭生活と空間ストーリーに自然に入れる。</li>
+            <li>字幕、色調、サムネイル、製品露出を統一する。</li>
+            <li>季節、床、家庭動作、空間回復によってブランド記憶をつくる。</li>
+          </ul>
+        </div>
+        <div class="card clay">
+          <span class="label">Visual Don'ts</span>
+          <ul>
+            <li>安っぽいバラエティ番組風の字幕を使わない。</li>
+            <li>過度なテックブルーや冷たいラボ感に寄せすぎない。</li>
+            <li>雑然として構図意識のない家庭記録風の画面を使わない。</li>
+            <li>家事を単一の性別責任として表現しない。</li>
+            <li>生活上の意味がないまま製品静物だけを撮らない。</li>
+            <li>インタビューに過度に依存し、内容リズムを停滞させない。</li>
+            <li>汚れの画面が制御不能になり、ブランドの清潔感を損なわない。</li>
+            <li>KOC / UGC コンテンツで Instagram の統一された視覚印象を直接崩さない。</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">5-10</div>
+        <div>
+          <h2>各撮影プロジェクトは「完成動画」思考から「資産パッケージ」思考へ移行するべきです。</h2>
+          <p>
+            S 級と A 級プロジェクトでは、撮影前に一本の動画だけでなく、完全な資産パッケージを設計します。現場では横版、縦版、静止画、サムネイル、製品クローズアップ、空間カット、人物動作、汚れ証明、結果画面を同時に考慮する必要があります。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>プロセス</th>
+            <th>実行内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>企画</td>
+            <td>Big Idea、対象プラットフォーム、資産リストを確定する。</td>
+          </tr>
+          <tr>
+            <td>プリプロダクション</td>
+            <td>脚本、絵コンテ、ロケーション、美術、衣装、製品動線、技術確認。</td>
+          </tr>
+          <tr>
+            <td>撮影</td>
+            <td>メイン動画撮影 + 短尺同時撮影 + 平面撮影 + 空間カットと製品素材の追加撮影。</td>
+          </tr>
+          <tr>
+            <td>ポストプロダクション</td>
+            <td>メイン動画編集、短尺切り出し、カラーグレーディング、字幕、サムネイル、Carousel。</td>
+          </tr>
+          <tr>
+            <td>納品</td>
+            <td>プラットフォームと用途別に分類してアーカイブし、SNS、公式サイト、EC、店頭、営業資料で再利用しやすくする。</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <section class="sheet chapter-title" id="chapter-6">
+      <p class="eyebrow">Chapter 06</p>
+      <h2>半年間コンテンツカレンダー</h2>
+      <p>
+        第6章では、第3章の月次 Big Idea を繰り返すのではなく、実行に焦点を当てます。限られた S / A 級撮影プロジェクトから、継続的に投稿可能で、再利用でき、転換に貢献するコンテンツ資産を生み出します。
+      </p>
+    </section>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">6-1</div>
+        <div>
+          <h2>半年間のコンテンツ産出はプロジェクト制を軸にし、日常投稿は資産の切り出しで支える。</h2>
+          <p>
+            半年間のコンテンツでは、毎月大型撮影を新規に立ち上げる必要はありません。1 つの S 級ブランドプロジェクト、2-3 個の A 級テーマプロジェクト、そして継続的な B 級運用コンテンツで構成します。
+          </p>
+        </div>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>等級</th>
+            <th>半年間計画</th>
+            <th>内容説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S 級</td>
+            <td>ブランド級メインプロジェクト 1 件</td>
+            <td>一つの大きなアイデアを軸にブランドメインフィルムを撮影し、同時にキービジュアル、短尺動画、平面素材、公式サイト、EC、店頭素材を撮影する。</td>
+          </tr>
+          <tr>
+            <td>A 級</td>
+            <td>テーマプロジェクト 2-3 件</td>
+            <td>機能浸透型コンテンツを中心に、Cleaning Proof、Daily Reset、家庭シーン、Seasonal Living などを制作する。</td>
+          </tr>
+          <tr>
+            <td>B 級</td>
+            <td>継続投稿</td>
+            <td>SNS チームの頻度に合わせて、KOC、レビュー系クリエイターの内容、S / A 級切り出し、FAQ、短尺再編集を運用する。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        B 級コンテンツの本数は本提案内で固定せず、SNS チームの投稿頻度、素材ストック、プラットフォーム配信リズムに応じて決定します。
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">6-2</div>
+        <div>
+          <h2>Mindoo のコンテンツは、日本の生活リズムに沿ってユーザーの日常へ入ることができます。</h2>
+          <p>
+            季節の節目は、Seasonal Living、Quiet Domestic Reset、Floor Culture と結びつけられます。季節コンテンツは毎回機能を強く見せる必要はありません。シーン、光、床、空間が戻った後の状態を通じて、Mindoo を生活リズムの中に自然に存在させることができます。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>時期 / 節目</th>
+            <th>コンテンツ機会</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>春</td>
+            <td>花粉、季節の変わり目、引っ越し、新生活。</td>
+          </tr>
+          <tr>
+            <td>梅雨</td>
+            <td>玄関の湿気、足跡、室内床のベタつき。</td>
+          </tr>
+          <tr>
+            <td>夏</td>
+            <td>素足、ペット、子どもの床上活動、キッチン清掃。</td>
+          </tr>
+          <tr>
+            <td>秋</td>
+            <td>衣替え整理、木の床、室内で過ごす時間の増加。</td>
+          </tr>
+          <tr>
+            <td>年末</td>
+            <td>大掃除、家庭空間の reset、一年のまとめ。</td>
+          </tr>
+          <tr>
+            <td>伝統行事 / 住宅シーン</td>
+            <td>神社、寺院、和風住宅、季節装飾、静物化した製品配置。</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">6-3</div>
+        <div>
+          <h2>各プロジェクトには「クリエイティブ確認、技術確認、撮影、編集、プラットフォーム別分解」の時間を確保する。</h2>
+          <p>
+            A 級プロジェクトは 3-4 週間、S 級プロジェクトは 6-8 週間を目安にします。特に機能証明、重量、階段移動、タンク、汚水処理を扱う場合は、撮影前に技術側の確認を完了する必要があります。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="label">A 級プロジェクト</span>
+          <h3>A 級プロジェクトの流れ：3-4 週間</h3>
+          <ul>
+            <li>Week 1：企画、脚本、絵コンテ、製品機能確認。</li>
+            <li>Week 2：ロケーション、美術、出演者 / KOC、撮影準備。</li>
+            <li>Week 3：撮影、初稿編集、短尺切り出し。</li>
+            <li>Week 4：確認、カラーグレーディング、字幕、サムネイル、公開。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="label">S 級プロジェクト</span>
+          <h3>S 級プロジェクトの流れ：6-8 週間</h3>
+          <ul>
+            <li>Week 1-2：大きなアイデア、脚本、絵コンテ、予算、シーン設計。</li>
+            <li>Week 3-4：美術、衣装、出演者、技術検証、撮影準備。</li>
+            <li>Week 5：メイン撮影 + 平面撮影 + 短尺同時撮影。</li>
+            <li>Week 6-7：メイン動画編集、カラー、音、短尺切り出し。</li>
+            <li>Week 8：最終確認、プラットフォーム別分解、公開準備。</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet">
+      <div class="page-head">
+        <div class="page-no">6-4</div>
+        <div>
+          <h2>半年間計画の成果は、投稿コンテンツの束ではなく、継続利用できるブランド資産です。</h2>
+          <p>
+            半年後、Mindoo は投稿済みの SNS 動画だけでなく、継続的に再利用できるビジュアル資産、機能証明資産、FAQ 資産、営業補助資産を蓄積しているべきです。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>資産タイプ</th>
+            <th>後続用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ブランドメインフィルム</td>
+            <td>公式サイト、YouTube、展示会、営業説明。</td>
+          </tr>
+          <tr>
+            <td>機能証明素材ライブラリ</td>
+            <td>TikTok、Shorts、広告、EC 商品ページ。</td>
+          </tr>
+          <tr>
+            <td>ワンカット清掃素材</td>
+            <td>機能信頼、レビュー応答、購入不安解消。</td>
+          </tr>
+          <tr>
+            <td>季節ビジュアル素材</td>
+            <td>Instagram、公式サイト、後続 Campaign。</td>
+          </tr>
+          <tr>
+            <td>キービジュアルと平面素材</td>
+            <td>Feed、広告、店頭、展示会。</td>
+          </tr>
+          <tr>
+            <td>KOC / UGC 再利用可能素材</td>
+            <td>SNS 投稿、広告二次利用、ランディングページ。</td>
+          </tr>
+          <tr>
+            <td>How-to / Maintenance 素材</td>
+            <td>FAQ、公式サイト、カスタマーサポート補助、購入後教育。</td>
+          </tr>
+          <tr>
+            <td>FAQ と購入不安解消素材</td>
+            <td>EC、営業資料、SNS コメント応答。</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sheet" id="chapter-7">
+      <div class="page-head">
+        <div class="page-no">7-1</div>
+        <div>
+          <h2>動画コンテンツは、SNS、KOC、データフィードバックと循環する必要があります。</h2>
+          <p>
+            コンテンツ公開後の結果は、次のクリエイティブ判断に影響します。Visual Director は、SNS 運用、広告配信、EC / 公式サイト、KOC 協業先と基本的な連携を保ち、コンテンツ制作を一度きりのアウトプットではなく、継続的に最適化されるシステムにする必要があります。
+          </p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>協業方向</th>
+            <th>注視する内容</th>
+            <th>Visual Director の関与方法</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>KOC / UGC 協業</td>
+            <td>クリエイター内容がブランドビジュアルに合っているか、リアルな使用フィードバックを二次利用できるか。</td>
+            <td>ビジュアル Brief を提供し、再利用可能な素材を選定し、Instagram の視覚統一を壊さないようにする。</td>
+          </tr>
+          <tr>
+            <td>データフィードバック</td>
+            <td>完視聴率、保存率、コメント内の質問、公式サイトクリック、EC クリック。</td>
+            <td>データに基づき、どのテーマ、フック、サムネイル、ビジュアル形式を強化すべきか判断する。</td>
+          </tr>
+          <tr>
+            <td>コンテンツ最適化</td>
+            <td>どの内容が理解を生み、どの内容が転換補助につながるか。</td>
+            <td>SNS とレビューの反応を次回の脚本、絵コンテ、撮影重点に反映する。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        特にレビュー系クリエイター、KOC コンテンツ、コメント欄の反応は、ユーザーが本当に気にしている問題を発見する助けになります。たとえば、汚水処理、本体重量、階段移動、メンテナンス手順、収納方法などです。これらの反応は速やかに次回の企画へ取り入れ、FAQ、How-to、購入不安解消、機能証明コンテンツへ転換します。
+      </div>
+
+      <div class="quote">
+        コンテンツアイデア、ビジュアル表現、ユーザーフィードバックの間に循環が生まれてこそ、半年間計画は一度きりの提案ではなく、継続的な制作システムになります。
+      </div>
+    </article>
+
+    <p class="footer">
+      出典：Mindoo 公式サイトの公開情報、公開SNSコンテンツの観察、および本提案におけるオリジナルのコンテンツ戦略整理。本提案は半年間の動画コンテンツ制作マトリクスに焦点を当て、コンテンツ企画、ビジュアルアイデア、制作システム、素材再活用を主な対象とします。
+      <span class="usage-note">© 2026 Zhang Fei / 張霏. 本資料は面談ディスカッション用途のオリジナル提案ドラフトです。作成者の許可なく、複製、転送、その他商業用途で使用することを禁じます。</span>
+    </p>
+  </main>
+</body>
+</html>
